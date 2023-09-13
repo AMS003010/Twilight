@@ -1,0 +1,24 @@
+require('dotenv').config();
+require('express-async-errors');
+const express = require('express');
+const app = express();
+const connection = require('./db');
+const cors = require('cors');
+const userRoutes = require('./routes/userRoute');
+const authRoutes = require('./routes/authRoute');
+const songRoutes = require('./routes/songRoute');
+const playlistRoutes = require('./routes/playlistRoute');
+
+connection();
+
+app.use(express.json());
+app.use(cors());
+
+app.use('/api/user/',userRoutes);
+app.use('/api/login/',authRoutes);
+app.use('/api/song/',songRoutes);
+app.use('/api/playlist/',playlistRoutes);
+
+app.listen(process.env.PORT,() => {
+    console.log("Connected and listening on Port ",process.env.PORT);
+})
