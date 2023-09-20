@@ -8,6 +8,7 @@ const userRoutes = require('./routes/userRoute');
 const authRoutes = require('./routes/authRoute');
 const songRoutes = require('./routes/songRoute');
 const playlistRoutes = require('./routes/playlistRoute');
+const searchRoutes =  require('./routes/searchRoutes');
 
 connection();
 
@@ -18,6 +19,7 @@ app.use('/api/user/',userRoutes);
 app.use('/api/login/',authRoutes);
 app.use('/api/song/',songRoutes);
 app.use('/api/playlist/',playlistRoutes);
+app.use('/api/');
 
 app.listen(process.env.PORT,() => {
     console.log("Connected and listening on Port ",process.env.PORT);
