@@ -5,7 +5,7 @@ const HomeNavbar = () => {
         <div className='homeContainer'>
             <div className='logo'>
                 <Link to='/'>
-                    <h1>TWILGHT.</h1>
+                    <h1>TWILIGHT.</h1>
                 </Link>
             </div>
             <div className='homeNav'>
