@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Ubuntu:wght@700&display=swap');
 
-body {
-  background-image: url('images/artwork_\(3\)_upscaled.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
+body, html {
+  margin: 0;
+  padding: 0;
 }
 
 .logoContainer h1 {
