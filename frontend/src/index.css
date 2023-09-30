@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Michroma&family=Poppins&family=Ubuntu:wght@700&display=swap');
 
 body, html {
   margin: 0;
@@ -63,7 +63,7 @@ body, html {
   line-height: 35px;
   letter-spacing: 0.45px;
   margin-top: 0px;
-  padding-top: 0px;
+  padding-top: 15px;
 }
 
 .navbarcontainer .aboutNav {
@@ -158,4 +158,84 @@ body, html {
 
 .button-17:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.aboutUsHeading {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.aboutUsInfo {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+  min-width: 500px;
+  padding-left: 30px;
+  display: flex;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 30px;
+}
+
+.image {
+  width: 230px;
+  height: 230px;
+  border-radius: 10.91px;
+  border: 1px solid #DBB2B2;
+}
+
+.aboutUsContainer {
+  display: flex;
+  padding-top: 50px;
+}
+
+#team0 {
+  border-color: #231C27;
+}
+
+#team1 {
+  background-image: url('../src/img/user1.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#team2 {
+  background-image: url('../src/img/user2.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#team3 {
+  background-image: url('../src/img/user3.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aboutUsContainer hr {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  width: 700px;
 }

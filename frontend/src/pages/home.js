@@ -1,25 +1,9 @@
-import {Link} from 'react-router-dom'
+import HomeContent from '../components/homeScreenContent';
 
-const HomeNavbar = () => {
+const Home = () => {
     return (
-        <div className='homeContainer'>
-            <div className='logo'>
-                <Link to='/'>
-                    <h1>TWILIGHT.</h1>
-                </Link>
-            </div>
-            <div className='homeNav'>
-                <Link to='/'>
-                    <h1>Home</h1>
-                </Link>
-            </div>
-            <div className='aboutNav'>
-                <Link to='/h1'>
-                    <h1>About us</h1>
-                </Link>
-            </div>
-        </div>
+        <HomeContent/>    
     )
 }
 
-export default HomeNavbar;
+export default Home;

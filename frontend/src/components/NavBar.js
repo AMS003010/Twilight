@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 import Logo from './logo'
 
@@ -7,12 +7,12 @@ const NavBar = () => {
         <div className='navbarcontainer'>
             <Logo></Logo>
             <div className='inner'>
-                <Link className='homeNav'>
+                <NavLink className='homeNav' to='/'>
                     <h1>Home</h1>
-                </Link>
-                <Link className='aboutNav'>
+                </NavLink>
+                <NavLink className='aboutNav' to='/aboutus'>
                     <h1>About us</h1>
-                </Link>
+                </NavLink>
             </div>
         </div>
     )
