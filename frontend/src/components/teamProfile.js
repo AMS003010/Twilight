@@ -1,1 +1,0 @@
-//Teamprofile component

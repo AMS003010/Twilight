@@ -1,12 +1,16 @@
 import React from 'react';
 
 import Logo from '../components/logo'
+import github from '../img/github.png'
+import insta from '../img/instagram.png'
+import twitter from '../img/twitter.png'
+import email from '../img/email.png'
 
 class aboutUs extends React.Component {
     render(){
         const mystyle = {
             backgroundColor: '#231C27',
-            height: '100vh',
+            height: '205vh',
         };
 
         return (
@@ -33,10 +37,26 @@ class aboutUs extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className='socialMedia'>
+                    <a href='https://github.com/AMS003010' target='blank'>
+                        <img src={github} alt='Github' className='socialMediaImage'/>
+                    </a>
+                    <a href='https://twitter.com/ams_132_' target='blank'>
+                        <img src={twitter} alt='Twitter' className='socialMediaImage'/>
+                    </a>
+                    <a href='https://www.instagram.com/' target='blank'>
+                        <img src={insta} alt='Instagram' className='socialMediaImage'/>
+                    </a>
+                </div>
+                <div id='banner'></div>
+                <div className='contactUsHeading'>Contact Us</div>
+                <div id='emailImage'>
+                    <img src={email} alt='Github'/>
+                    <a href='mailto:twilight@gmail.com'>twilight@gmail.com</a>
+                </div>
             </div>
         );
     }
 }
 
 export default aboutUs;
-//I want this react component to cover the entire screen

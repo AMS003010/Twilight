@@ -3,6 +3,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 .logoContainer h1 {
@@ -239,3 +240,48 @@ body, html {
   margin-bottom: 30px;
   width: 700px;
 }
+
+.socialMediaImage {
+  width: 50px;
+  padding-left: 40px;
+}
+
+.contactUsHeading {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 35px;
+  padding-top: 50px;
+}
+
+#emailImage {
+  display: flex;
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
+#emailImage img {
+  width: 30px;
+}
+
+#emailImage a {
+  text-decoration: none;
+  padding-top: 6px;
+  padding-left: 15px;
+  color: #FFF;
+  font-family: Ubuntu;
+}
+
+#banner {
+  background-image: url('../src/img/banner.png');
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  margin-top: 300px;
+}
+
