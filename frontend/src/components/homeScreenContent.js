@@ -1,5 +1,6 @@
 import NavBar from './NavBar';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import background from '../img/bg.png';
 
@@ -22,9 +23,11 @@ class HomeContent extends React.Component {
                     Enjoy.<br /><br />
                     Music.
                 </div>
-                <button className="button-17">
-                    Listen now!
-                </button>
+                <Link to='/intro'>
+                    <button className="button-17">
+                        Listen now!
+                    </button>
+                </Link>
             </div>
         );
     }
