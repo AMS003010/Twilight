@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Logo from '../components/logo'
+import HighlightedButton from '../components/highlightedButton'
 
 class intro extends React.Component {
     render(){
@@ -9,7 +10,7 @@ class intro extends React.Component {
             height: '100vh',
         }
         const navStyle = {
-            display: 'flex'
+            display: 'flex',
         }
         return(
             <div style={mystyle}>
@@ -35,6 +36,7 @@ class intro extends React.Component {
                     </div>
                     <div className='introSignUp'>
                         Sign Up<br/>for<br/>Free
+                        <HighlightedButton text='Click here to Sign Up'/>
                     </div>
                 </div>
             </div>
