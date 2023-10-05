@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Logo from '../components/logo'
-import IntroLogin from '../components/introLogin'
 
 class intro extends React.Component {
     render(){
@@ -9,11 +8,14 @@ class intro extends React.Component {
             backgroundColor: '#231C27',
             height: '100vh',
         }
+        const navStyle = {
+            display: 'flex'
+        }
         return(
             <div style={mystyle}>
-                <nav>
+                <nav style={navStyle}>
                     <Logo/>
-                    <IntroLogin/>
+                    <button className="button-77">Login</button>
                 </nav>
                 <div className='introContainer'>
                     <div>
