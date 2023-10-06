@@ -392,6 +392,7 @@ body, html {
   line-height: normal;
   margin-top: 20px;
   margin-left: 100px;
+  padding-left: 20px;
 }
 
 .button-77 {
@@ -496,3 +497,19 @@ body, html {
   cursor: default;
   opacity: .24;
 }
+
+#svg1 {
+  position: absolute;
+  top: 7.8em;
+  left: 15.8em;
+  z-index: 1;
+}
+
+#svg2 {
+  position: absolute;
+  top: 7.5em;
+  left: 15.4em;
+  z-index: 2;
+}
+
+

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import Logo from '../components/logo'
 import HighlightedButton from '../components/highlightedButton'
@@ -16,7 +17,9 @@ class intro extends React.Component {
             <div style={mystyle}>
                 <nav style={navStyle}>
                     <Logo/>
-                    <button className="button-77">Login</button>
+                    <NavLink to='/login'>
+                        <button className="button-77">Login</button>
+                    </NavLink>
                 </nav>
                 <div className='introContainer'>
                     <div>
