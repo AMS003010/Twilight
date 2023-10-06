@@ -512,4 +512,124 @@ body, html {
   z-index: 2;
 }
 
+.loginUnderLay {
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  background: #FFECB4;
+  z-index: 1;
+  left: 18.5em;
+  top: 8.5em;
+}
 
+.logindiv {
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  background: #E4E4E4;
+  display: flex;
+  z-index: 2;
+  left: 20em;
+  top: 10em;
+}
+
+.logindiv .loginForm {
+  width: 420px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.loginHeading {
+  color: #000;
+  font-family: Michroma;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.loginCoverImage {
+  width: 412px;
+  height: 472px;
+  flex-shrink: 0;
+  background: url('../src/img/loginCover.png'), lightgray 50% / cover no-repeat;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  stroke-width: 1.454px;
+  stroke: #000;
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  margin-left: 50px;
+  margin-top: 12px;
+}
+
+.logindiv .loginCenter .loginEmail label {
+  color: #000;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+.logindiv .loginCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.logindiv .loginCenter .loginEmail input {
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  width: 230.194px;
+  height: 32px;
+  margin-bottom: 40px;
+}
+
+.logindiv .loginCenter .loginPassword label {
+  color: #000;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+.logindiv .loginCenter .loginPassword input {
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  width: 230.194px;
+  height: 32px;
+  margin-bottom: 80px;
+}
+
+.logindiv .loginButton button{
+  width: 82px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  color: #000;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.225px;
+}
