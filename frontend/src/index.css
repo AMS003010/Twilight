@@ -594,6 +594,7 @@ body, html {
 
 .logindiv .loginCenter .loginEmail input {
   border-radius: 10.906px;
+  font-family: Poppins;
   border: 1.454px solid #000;
   width: 230.194px;
   height: 32px;
@@ -613,6 +614,7 @@ body, html {
 
 .logindiv .loginCenter .loginPassword input {
   border-radius: 10.906px;
+  font-family: Poppins;
   border: 1.454px solid #000;
   width: 230.194px;
   height: 32px;
@@ -632,4 +634,108 @@ body, html {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.225px;
+}
+
+.signUpLayout {
+  position: absolute;
+  width: 870px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  background: #E4E4E4;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  left: 20em;
+  top: 10em;
+}
+
+.signUpHeading {
+  color: #000;
+  font-family: Michroma;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+}
+
+.signUpDiv {
+  display: flex;
+}
+
+.signUpUnderLayDiv {
+  position: absolute;
+  width: 870px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  background: #FFECB4;
+  z-index: 1;
+  left: 18.5em;
+  top: 8.5em;
+}
+
+.signUpDiv .signUpColumn1,.signUpColumn2 label {
+  color: #000;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.3px;
+}
+
+.signUpDiv .signUpColumn1 input {
+  border-radius: 10.906px;
+  font-family: Poppins;
+  border: 1.454px solid #000;
+  width: 230.194px;
+  height: 32px;
+  margin-bottom: 40px;
+}
+
+.signUpDiv .signUpColumn2 input {
+  border-radius: 10.906px;
+  font-family: Poppins;
+  border: 1.454px solid #000;
+  width: 230.194px;
+  height: 32px;
+  margin-bottom: 40px;
+}
+
+.signUpButton {
+  width: 92px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10.906px;
+  border: 1.454px solid #000;
+  color: #000;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.225px;
+}
+
+.signUpDiv .signUpColumn1  {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-left: 150px;
+}
+
+.signUpDiv .signUpColumn2  {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-left: 50px;
 }
