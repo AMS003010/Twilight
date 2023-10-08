@@ -5,6 +5,9 @@ import AboutUs from './pages/about us';
 import Intro from './pages/intro';
 import Login from './pages/login';
 import SignUp from './pages/sign up';
+//import SongUpload from './components/uploadSong';
+//import FirebaseImageUpload from './components/uploadSong';
+//import SongUpload from './components/uploadSong';
 
 function App() {
   return (
