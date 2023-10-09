@@ -32,11 +32,11 @@ const getUser = async (req,res) => {
 };
 
 const  updateUser = async (req,res) => {
-    const user = await User.findOneAndUpdate(
+    const user = await User.findByIdAndUpdate(
         req.params.id,
         {$set: req.body},
         {new: true}
-    );
+    ).select("-password -__v");
     res.status(200).send({data: user,message: "Profile updated successfully"});
 };
 
