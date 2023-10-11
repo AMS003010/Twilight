@@ -21,6 +21,7 @@
     "joi-password-complexity": "^5.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.0",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "validator": "^13.11.0"
   }
 }

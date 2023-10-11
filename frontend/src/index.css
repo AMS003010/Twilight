@@ -739,3 +739,9 @@ body, html {
   text-align: left;
   margin-left: 50px;
 }
+
+.uploadSongDiv {
+  background-color: #382d3e;
+  width: 250px;
+  height: 250px;
+}
