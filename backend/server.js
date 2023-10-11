@@ -15,10 +15,10 @@ connection();
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/user/',userRoutes);
-app.use('/api/login/',authRoutes);
-app.use('/api/song/',songRoutes);
-app.use('/api/playlist/',playlistRoutes);
+app.use('/api/user',userRoutes);
+app.use('/api/login',authRoutes);
+app.use('/api/song',songRoutes);
+app.use('/api/playlist',playlistRoutes);
 app.use('/api/search',searchRoutes);
 
 app.listen(process.env.PORT,() => {
