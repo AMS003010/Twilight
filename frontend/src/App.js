@@ -5,6 +5,10 @@ import AboutUs from './pages/about us';
 import Intro from './pages/intro';
 import Login from './pages/login';
 import SignUp from './pages/sign up';
+import Profile from './pages/profile';
+import Info from './pages/info';
+import Search from './pages/search';
+
 //import SongUpload from './components/uploadSong';
 //import FirebaseImageUpload from './components/uploadSong';
 //import SongUpload from './components/uploadSong';
@@ -34,6 +38,18 @@ function App() {
           <Route
             path='/signup'
             element={<SignUp />}
+          />
+          <Route
+            path='/profile'
+            element={<Profile/>}
+          />
+          <Route
+            path='/info'
+            element={<Info/>}
+          />
+          <Route
+            path='/search'
+            element={<Search/>}
           />
         </Routes> 
       </div>
