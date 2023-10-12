@@ -1,10 +1,10 @@
 import {useState} from 'react'
-import {useUserContext} from './useUserContext'
+import {UseUserContext} from './useUserContext'
 
-export const useLogin = () => {
+export const UseLogin = () => {
     const [error,setError] = useState(null)
     const [isLoading,setIsLoading] = useState(null)
-    const {dispatch} = useUserContext()
+    const {dispatch} = UseUserContext()
     const login = async (email,password) => {
         setIsLoading(true)
         setError(null)

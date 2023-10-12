@@ -1,9 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Michroma&family=Monoton&family=Poppins&family=Secular+One&family=Ubuntu:wght@700&display=swap');
 
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+ 
+input.error {
+  border: 1px solid var(--error);
+}
+
+form button {
+  cursor: pointer;
 }
 
 .logoContainer h1 {

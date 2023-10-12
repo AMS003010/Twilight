@@ -1,5 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+//import { UseUserContext } from './hooks/useUserContext';
+
 import Home from './pages/home';
 import AboutUs from './pages/about us';
 import Intro from './pages/intro';
@@ -11,6 +13,7 @@ import SignUp from './pages/sign up';
 //import SongUpload from './components/uploadSong';
 
 function App() {
+  //const {user} = UseUserContext()
   return (
     <div className="App" style={{backgroundColor: '#231C27'}}>
       <BrowserRouter>

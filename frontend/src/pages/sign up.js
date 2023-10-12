@@ -2,19 +2,31 @@ import React from 'react'
 
 import Logo from '../components/logo'
 
-class SignUp extends React.Component {
-    render(){
+import { useState } from 'react'
+import { UseSignUp } from '../hooks/useSignup'
+
+const SignUp = () => {
+    
         const myStyle = {
             backgroundColor: '#231C27',
             height: '100vh',
         }
+        const [email,setEmail] = useState('')
+        const [password,setPassword] = useState('')
+        const {signup,isLoading,error} = UseSignUp()
+
+        const handleSubmit = async (e) => {
+            e.preventDefault()
+            await signup(email,password)
+        }
+
         return(
             <div style={myStyle}>
                 <nav>
                     <Logo/>
                 </nav>
                 <div className='signUpLayout'> 
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <h1 className='signUpHeading'>Sign Up</h1>
                         <div className='signUpDiv'>
                             <div className='signUpColumn1'>
@@ -24,11 +36,19 @@ class SignUp extends React.Component {
                                 </div>
                                 <div className='signUpEmail'>
                                     <label>Email*</label><br/>
-                                    <input type='email'/>
+                                    <input
+                                        type='email'
+                                        onChange={(e) => {setEmail(e.target.value)}}
+                                        value={email}
+                                    />
                                 </div>
                                 <div className='signUpPassword'>
                                     <label>Password*</label><br/>
-                                    <input type='password'/>
+                                    <input
+                                        type='password'
+                                        onChange={(e) => {setPassword(e.target.value)}}
+                                        value={password}
+                                    />
                                 </div>
                             </div>
                             <div className='signUpColumn2'>
@@ -42,13 +62,14 @@ class SignUp extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <button className='signUpButton'>Submit</button>
+                        <button className='signUpButton' disabled={isLoading}>Submit</button>
+                        {error && <div className="error">{error}</div>}
                     </form>
                 </div>
                 <div className='signUpUnderLayDiv'></div>
             </div>
         )
     }
-}
+
 
 export default SignUp
