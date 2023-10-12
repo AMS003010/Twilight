@@ -540,7 +540,6 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
-  border: 1.454px solid #000;
   background: #FFECB4;
   z-index: 1;
   left: 18.5em;
@@ -553,7 +552,6 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
-  border: 1.454px solid #000;
   background: #E4E4E4;
   display: flex;
   z-index: 2;
@@ -591,7 +589,6 @@ form button {
   stroke-width: 1.454px;
   stroke: #000;
   border-radius: 10.906px;
-  border: 1.454px solid #000;
   margin-left: 50px;
   margin-top: 12px;
 }
@@ -664,7 +661,6 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
-  border: 1.454px solid #000;
   background: #E4E4E4;
   justify-content: center;
   align-items: center;
@@ -694,7 +690,6 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
-  border: 1.454px solid #000;
   background: #FFECB4;
   z-index: 1;
   left: 18.5em;
@@ -760,6 +755,118 @@ form button {
   align-items: center;
   text-align: left;
   margin-left: 50px;
+}
+
+.playlistContainer {
+  position:relative;
+  width: 384px;
+  height: 80px;
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #4C4454;
+  margin-top: 20.75px;
+  margin-bottom: 20.75px;
+}
+
+.playlistLogo {
+  position: absolute;
+  display: flex;
+  top: 5px;
+  left: 5px;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #4C3C4C;
+}
+
+.playlistInfo {
+  position: relative;
+  left: 91px;
+  width: 200px;
+}
+
+.playlistName {
+  position: absolute;
+  top: -32px;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.playlistSongsTime {
+  position:relative;
+  bottom: 2px;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100px;
+}
+
+.playlistHead, .profileHead{
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  color: #B200ED;
+  font-size: 50px;
+  font-family: Poppins;
+  font-weight: 400;
+  margin: 20.75px;
+  padding: 20.75px;
+}
+
+.profileDiv {
+  display: flex;
+}
+
+.profileColumn1 {
+  margin-left: 260px;
+  margin-top: 50px;;
+}
+
+.profileColumn2 {
+  margin-left: 260px;
+  margin-top: 50px;;
+}
+
+.profileLogo {
+  position: relative;
+  display: flex;
+  left: 63.5px;
+  width: 256px;
+  height: 256px;
+  border-radius: 200px;
+  background: #4C4454;
+}
+
+.profileInfoName {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.searchDiv {
+  position: relative;
+  left: 455px;
+  }
+
+.searchLink {
+  position:relative;
+  top: 23px;
+}
+
+.playlistLink {
+  text-decoration: none;
 }
 
 .uploadSongDiv {
