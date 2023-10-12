@@ -15,7 +15,7 @@ function SongUpload() {
   const imagesListRef = ref(storage, "images/");
   const uploadFile = () => {
     if (imageUpload == null) return;
-    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    const imageRef = ref(storage, `images/${v4()}`);
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
