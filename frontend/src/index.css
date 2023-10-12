@@ -735,12 +735,6 @@ body, html {
   margin-left: 50px;
 }
 
-.uploadSongDiv {
-  background-color: #382d3e;
-  width: 250px;
-  height: 250px;
-}
-
 .playlistContainer {
   position:relative;
   width: 384px;
@@ -851,4 +845,10 @@ body, html {
 
 .playlistLink {
   text-decoration: none;
+}
+
+.uploadSongDiv {
+  background-color: #382d3e;
+  width: 250px;
+  height: 250px;
 }
