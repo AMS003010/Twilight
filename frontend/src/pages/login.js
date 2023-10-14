@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import Logo from '../components/logo'
 
@@ -16,8 +17,14 @@ const Login = () => {
 
         const handleSubmit = async (e) => {
             e.preventDefault()
+            console.log("handleSubmit : "+email+"   "+password)
             await login(email,password)
         }
+
+        const handleClick = () => {
+            <Link to='/profile'/>
+        }
+
         return(
             <div style={myStyle}>
                 <nav>
@@ -46,7 +53,7 @@ const Login = () => {
                                 </div>
                             </div>
                             <div className='loginButton'>
-                                <button disabled={isLoading}>Login</button>
+                                <button disabled={isLoading} onClick={handleClick}>Login</button>
                                 {error && <div className="error">{error}</div>}
                             </div>
                         </form>

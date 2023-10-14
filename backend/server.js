@@ -13,6 +13,10 @@ const searchRoutes =  require('./routes/searchRoutes');
 connection();
 
 app.use(express.json());
+app.use((req,res,next) => {
+    console.log(req.path,req.method)
+    next()
+})
 app.use(cors());
 
 app.use('/api/user',userRoutes);

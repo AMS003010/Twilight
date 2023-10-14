@@ -27,13 +27,13 @@ class aboutUs extends React.Component {
                         </div>
                     </div>
                     <div class="image-container">
-                        <div class="image" id='team0'>
+                        <div className="image" id='team0'>
                         </div>
-                        <div class="image"id='team1'>
+                        <div className="image"id='team1'>
                         </div>
-                        <div class="image"id='team2'>
+                        <div className="image"id='team2'>
                         </div>
-                        <div class="image"id='team3'>
+                        <div className="image"id='team3'>
                         </div>
                     </div>
                 </div>

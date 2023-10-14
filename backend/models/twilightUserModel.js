@@ -8,7 +8,7 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
     name: {
         type: String,
-        required: true
+        default: "user_name"
     },
     email: {
         type: String,
@@ -21,19 +21,19 @@ const userSchema = new Schema({
     },
     gender: {
         type: String,
-        required: true
+        default: "male"
     },
     day: {
         type: String,
-        required: true
+        default: "0"
     },
     month: {
         type: String,
-        required: true
+        default: "0"
     },
     year: {
         type: String,
-        required: true
+        default: "0"
     },
     likedsongs: {
         type: [String],
@@ -54,6 +54,7 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.generateAuthToken = function () {
+    console.log("generateAuthToken")
     const token = jwt.sign(
         { _id: this._id,name: this.name,isAdmin: this.isAdmin},
         process.env.SECRET,
@@ -63,14 +64,15 @@ userSchema.methods.generateAuthToken = function () {
 };
 
 const validate = (twuser) => {
+    console.log("validate")
     const schema = joi.object({
-        name: joi.string().min(3).max(20).required(),
+        name: joi.string().min(3).max(20),
         email: joi.string().email().required(),
         password: passwordComplexity().required(),
-        day: joi.string().required(),
-        month: joi.string().required(),
-        year: joi.string().required(),
-        gender: joi.string().valid("male","female","non-binary").required(),
+        day: joi.string(),
+        month: joi.string(),
+        year: joi.string(),
+        gender: joi.string().valid("male","female","non-binary"),
         img: joi.string(),
     })
     return schema.validate(twuser);

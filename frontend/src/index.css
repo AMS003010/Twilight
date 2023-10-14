@@ -18,6 +18,8 @@ div.error {
   color: var(--error);
   border-radius: 4px;
   margin: 20px 0;
+  font-family: Poppins;
+  border-radius: 10px;
 }
  
 input.error {
@@ -540,6 +542,7 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
+  border: 1.454px solid #000;
   background: #FFECB4;
   z-index: 1;
   left: 18.5em;
@@ -552,6 +555,7 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
+  border: 1.454px solid #000;
   background: #E4E4E4;
   display: flex;
   z-index: 2;
@@ -589,6 +593,7 @@ form button {
   stroke-width: 1.454px;
   stroke: #000;
   border-radius: 10.906px;
+  border: 1.454px solid #000;
   margin-left: 50px;
   margin-top: 12px;
 }
@@ -661,6 +666,7 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
+  border: 1.454px solid #000;
   background: #E4E4E4;
   justify-content: center;
   align-items: center;
@@ -690,6 +696,7 @@ form button {
   height: 500px;
   flex-shrink: 0;
   border-radius: 10.906px;
+  border: 1.454px solid #000;
   background: #FFECB4;
   z-index: 1;
   left: 18.5em;

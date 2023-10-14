@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-//import { UseUserContext } from './hooks/useUserContext';
+import { UseUserContext } from './hooks/useUserContext';
 
 import Home from './pages/home';
 import AboutUs from './pages/about us';
@@ -17,7 +17,7 @@ import Search from './pages/search';
 //import SongUpload from './components/uploadSong';
 
 function App() {
-  //const {user} = UseUserContext()
+  const {user} = UseUserContext()
   return (
     <div className="App" style={{backgroundColor: '#231C27'}}>
       <BrowserRouter>
@@ -37,11 +37,11 @@ function App() {
           />
           <Route
             path='/login'
-            element={<Login />}
+            element={!user ? <Login /> : <Profile />}
           />
           <Route
             path='/signup'
-            element={<SignUp />}
+            element={!user ? <SignUp /> : <Profile />}
           />
           <Route
             path='/profile'

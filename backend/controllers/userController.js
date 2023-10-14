@@ -1,14 +1,21 @@
 const {User,validate} = require('../models/twilightUserModel');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+const generateAuthToken = (_id) => {
+    return jwt.sign({_id},process.env.SECRET,{expiresIn: '3d'})
+}
 
 const addUser = async (req,res) => {
+    console.log("addUser")
+    console.log(req.body)
     const {error} = validate(req.body);
     if (error) {
-        return res.status(400).send({message: error.details[0].message});
+        return res.status(400).send({error: error.details[0].message});
     }
     const user = await User.findOne({email: req.body.email});
     if (user) {
-        return res.status(403).send({message: "User with given email already exists!"});
+        return res.status(403).send({error: "User with given email already exists!"});
     }
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(req.body.password,salt);
@@ -18,7 +25,9 @@ const addUser = async (req,res) => {
     }).save();
     newUser.password=undefined;
     newUser.__v = undefined;
-    res.status(200).send({data:newUser,message: "Account created successfully"});
+    const token = generateAuthToken(newUser._id);
+    const email = newUser.email;
+    res.status(200).send({email,token});
 }
 
 const getAllUsers = async (req,res) => {
