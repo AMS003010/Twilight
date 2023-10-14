@@ -881,3 +881,68 @@ form button {
   width: 250px;
   height: 250px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* styles.css */
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Carousel Slides */
+.carousel {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 300px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  margin: 0 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Indicators */
+.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.indicator.active {
+  background-color: #007bff;
+}
+

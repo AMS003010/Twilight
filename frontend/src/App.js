@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import { UseUserContext } from './hooks/useUserContext';
 
-import Home from './pages/home';
+//import Home from './pages/home';
 import AboutUs from './pages/about us';
 import Intro from './pages/intro';
 import Login from './pages/login';
@@ -10,6 +10,7 @@ import SignUp from './pages/sign up';
 import Profile from './pages/profile';
 import Info from './pages/info';
 import Search from './pages/search';
+import Carousel from './components/exploreCarousel'
 
 //import Testing from './components/state1';
 //import SongUpload from './components/uploadSong';
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route
             path='/'
-            element={<Home />}
+            element={<Carousel />}
           />
           <Route
             path='/aboutus'
