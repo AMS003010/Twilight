@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Michroma&family=Monoton&family=Poppins&family=Secular+One&family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Michroma&family=Monoton&family=Poppins&family=Rubik&family=Secular+One&family=Ubuntu:wght@700&display=swap');
 
 :root {
   --primary: #1aac83;
@@ -899,8 +899,8 @@ form button {
 /* Carousel Container */
 .carousel-container {
   position: relative;
-  width: 300px;
-  overflow: hidden;
+  width: 100%;
+  height: 50%;
   margin: 0 auto;
 }
 
@@ -908,21 +908,18 @@ form button {
 .carousel {
   display: flex;
   transition: transform 0.3s ease-in-out;
-}
-
-.slide {
-  flex: 0 0 300px;
-  border: 2px solid #ccc;
-  border-radius: 15px;
-  margin: 0 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
-}
-
-.slide img {
   width: 100%;
-  height: auto;
-  border-radius: 15px;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.carousel img {
+  width: 1400px;
+  height: 500px;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: yellow;
 }
 
 /* Indicators */
@@ -946,3 +943,86 @@ form button {
   background-color: #007bff;
 }
 
+/*       style   */
+
+.exploreLeftSideBar {
+  height: 100%;
+  width: auto;
+  background-image: linear-gradient(to top left, #14081c, #272137);
+}
+
+.exploreLeftSideBar .exploreLogoContainer {
+  padding-left: 20px;
+  padding-right: 50px;
+  padding-bottom: 70px;
+}
+
+.exploreRightSideBar {
+  width: 100%;
+  background-image: linear-gradient(to top left, #121538, #392f4a);
+  align-items: center;
+}
+
+.exploreCenter {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.exploreCenter .leftPanelComp {
+  display: flex;
+  color: #FFF;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  border-radius: 10px;
+  background-color: #383046;
+  width: 200px;
+  height: 55px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.leftPanelComp img {
+  width: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.leftPaneUserComp {
+  display: flex;
+  color: #FFF;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  background-color: #33234d6b;
+  width: 100%;
+  height: 65px;
+  margin-top: 293px;
+}
+
+.exploreUserProfile {
+  width: 43px;
+  height: 43px;
+  border-radius: 100%;
+  background-image: url('../src/img/sunboy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  margin-left: 10px;
+  margin-right: 10px;
+}

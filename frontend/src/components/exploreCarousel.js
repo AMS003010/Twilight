@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-import img1 from '../img/user1.png'
-import img2 from '../img/user2.png'
-import img3 from '../img/user3.png'
+import img1 from '../img/carousel1.jpg'
+import img2 from '../img/carousel2.jpg'
+import img3 from '../img/carousel3.jpg'
+import img4 from '../img/carousel4.jpg'
+import img5 from '../img/carousel5.jpg'
+import img6 from '../img/carousel6.jpg'
 
-const images = [img1,img2,img3];
+const images = [img1,img2,img3,img4,img5,img6];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,7 +26,7 @@ const Carousel = () => {
   return (
     <div className="carousel-container">
       <div className="carousel">
-        <img src={images[currentIndex]} alt='ih'/>
+        <img src={images[currentIndex]} alt='ih' style={{width:'100%',height:'100%'}}/>
       </div>
       <div className="indicators">
         {images.map((_, index) => (

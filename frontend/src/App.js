@@ -10,7 +10,7 @@ import SignUp from './pages/sign up';
 import Profile from './pages/profile';
 import Info from './pages/info';
 import Search from './pages/search';
-import Carousel from './components/exploreCarousel'
+import Explore from './pages/explore';
 
 //import Testing from './components/state1';
 //import SongUpload from './components/uploadSong';
@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route
             path='/'
-            element={<Carousel />}
+            element={<Explore />}
           />
           <Route
             path='/aboutus'
