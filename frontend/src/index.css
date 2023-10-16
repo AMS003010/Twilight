@@ -899,9 +899,10 @@ form button {
 /* Carousel Container */
 .carousel-container {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 50%;
   margin: 0 auto;
+  padding: 5%;
 }
 
 /* Carousel Slides */
@@ -919,7 +920,7 @@ form button {
   border-radius: 20px;
   border-width: 2px;
   border-style: solid;
-  border-color: yellow;
+  border-color: whitesmoke;
 }
 
 /* Indicators */

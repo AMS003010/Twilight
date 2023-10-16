@@ -1,4 +1,4 @@
-//import Carousel from '../components/exploreCarousel'
+import Carousel from '../components/exploreCarousel'
 import ExploreLeftSidePanel from "../components/exploreLeftSidePanel";
 
 const Explore = () => {
@@ -11,6 +11,7 @@ const Explore = () => {
         <div  style={mystyle}>
             <ExploreLeftSidePanel/>
             <div className='exploreRightSideBar'>
+                <Carousel/>
             </div>
         </div>
     )
