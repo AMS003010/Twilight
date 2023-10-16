@@ -915,12 +915,42 @@ form button {
 }
 
 .carousel div {
-  width: 1400px;
+  width: 1000px;
   height: 500px;
   border-radius: 20px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  color: white;
+  font-family: Rubik;
+  font-size: 60px; 
+}
+
+.infoDiv {
+  margin-top: 250px;
+  margin-left: 20px;
+}
+
+.exploreCarouselInfo {
+  display: flex;
+}
+
+.exploreCarouselInfo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.exploreCarouselInfo span {
+  font-size: 35px;
+}
+
+#noOfList {
+  color: white;
+}
+
+#monList {
+  color: rgb(126, 126, 126);
 }
 
 /* Indicators */
