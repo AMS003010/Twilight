@@ -5,7 +5,7 @@ import img2 from '../img/carousel2.jpg'
 import img3 from '../img/carousel3.jpg'
 import img4 from '../img/carousel4.jpg'
 import img5 from '../img/carousel5.jpg'
-import img6 from '../img/carousel6.jpg'
+import img6 from '../img/carousel11.jpg'
 
 const images = [img1,img2,img3,img4,img5,img6];
 
@@ -15,7 +15,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 5 seconds
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -26,7 +26,7 @@ const Carousel = () => {
   return (
     <div className="carousel-container">
       <div className="carousel">
-        <img src={images[currentIndex]} alt='ih' style={{width:'100%',height:'100%'}}/>
+        <div style={{width:'100%',height:'100%',backgroundImage: `url(${images[currentIndex]})`}}></div>
       </div>
       <div className="indicators">
         {images.map((_, index) => (
