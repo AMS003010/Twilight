@@ -5,12 +5,13 @@ import img2 from '../img/carousel2.jpg'
 import img3 from '../img/carousel3.jpg'
 import img4 from '../img/carousel4.jpg'
 import img5 from '../img/carousel5.jpg'
-import img6 from '../img/carousel11.jpg'
-import musicIcon from '../img/musicIcon.png'
+import img6 from '../img/carousel6.jpg'
+//import musicIcon from '../img/musicIcon.png'
+//<img src={musicIcon} alt='jun'/>
 
 
 const images = [img1,img2,img3,img4,img5,img6];
-const names = ["Ed Sheeran","Ed Sheeran","Niall Horan","Niall Horan","One Direction","Imagine Dragons"];
+const names = ["The Weeknd","Juice WRLD","Niall Horan","Billie Eilish","Marshmello","Imagine Dragons"];
 const listeners = ["23,45,678","98,41,618","23,45,678","11,90,678","57,45,668","19,45,678"];
 
 const Carousel = () => {
@@ -36,9 +37,8 @@ const Carousel = () => {
       <div className="carousel">
         <div style={{width:'100%',height:'100%',backgroundImage: `url(${images[currentIndex]})`}}>
           <div className='infoDiv'>
-            <span>{names[currentName]}</span>
+            <span className='exploreArtistName'>{names[currentName]}</span>
             <div className='exploreCarouselInfo'>
-              <img src={musicIcon} alt='jun'/>
               <span id='noOfList'>{listeners[currentListeners]}</span>
               <span id='monList'>&nbsp;monthly listeners</span>
             </div>

@@ -1,0 +1,29 @@
+import blueTick from '../img/blueTick.png'
+
+const ArtistCompDiv = (props) => {
+    const divStyle = {
+        backgroundImage: `url('${props.image}')`,
+        width: '50rem',
+        height: '20rem',
+        borderRadius: '20px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        marginBottom: '30px',
+        marginLeft: '40px',
+    }
+    return(
+        <div className='exploreArtistCard' style={divStyle}>
+            <div className='exploreArtistsDiv1'>
+                <span>{props.name}</span>
+                <img src={blueTick} alt='img'/>
+            </div>
+            <div className='exploreArtistsDiv2'>
+                <span className='exploreArtistsSpan1'>{props.listeners}</span>
+                <span className='exploreArtistsSpan2'>&nbsp;monthly listeners</span>
+            </div>
+        </div>
+    )
+}
+
+export default ArtistCompDiv;

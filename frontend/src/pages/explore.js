@@ -1,4 +1,7 @@
-import Carousel from '../components/exploreCarousel'
+//import Carousel from "../components/exploreCarousel";
+//import Discover from "../components/exploreDiscover";
+//import Genre from "../components/exploreGenre";
+import Artists from "../components/exploreArtists";
 import ExploreLeftSidePanel from "../components/exploreLeftSidePanel";
 
 const Explore = () => {
@@ -8,11 +11,9 @@ const Explore = () => {
         display: 'flex'
     }
     return(
-        <div  style={mystyle}>
+        <div style={mystyle}>
             <ExploreLeftSidePanel/>
-            <div className='exploreRightSideBar'>
-                <Carousel/>
-            </div>
+            <Artists/>
         </div>
     )
 }

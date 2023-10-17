@@ -9,6 +9,7 @@ body, html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 div.error {
@@ -900,7 +901,7 @@ form button {
 .carousel-container {
   position: relative;
   width: 90%;
-  height: 50%;
+  height: 380px;
   margin: 0 auto;
   padding: 5%;
 }
@@ -980,6 +981,7 @@ form button {
   height: 100%;
   width: auto;
   background-image: linear-gradient(to top left, #14081c, #272137);
+  position: fixed;
 }
 
 .exploreLeftSideBar .exploreLogoContainer {
@@ -989,15 +991,31 @@ form button {
 }
 
 .exploreRightSideBar {
-  width: 100%;
+  width: 83%;
+  height: 250vh;
   background-image: linear-gradient(to top left, #121538, #392f4a);
   align-items: center;
+  position: absolute;
+  left: 17.8%;
+}
+
+.exploreCarouselPageLayout {
+  width: 83%;
+  height: 100vh;
+  background-image: linear-gradient(to top left, #121538, #392f4a);
+  align-items: center;
+  position: absolute;
+  left: 17.8%;
 }
 
 .exploreCenter {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.exploreArtistName {
+  color: yellow;
 }
 
 .exploreCenter .leftPanelComp {
@@ -1056,4 +1074,105 @@ form button {
   background-position: center bottom;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.topArtistHeading {
+  color: #FFF;
+  font-family: Michroma;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 64.516% */
+  letter-spacing: 0.62px;
+  margin-left: 50px;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.exploreArtistsDiv1 {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  align-items: center;
+  padding-left: 30px;
+  padding-top: 210px;
+}
+
+.exploreArtistsDiv1 span {
+  color: white;
+  font-family: Rubik;
+  font-size: 40px; 
+  letter-spacing: 0.45px;
+}
+
+.exploreArtistsDiv1 img {
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.exploreArtistsDiv2 {
+  display: flex;
+  color: white;
+  font-family: Poppins;
+  letter-spacing: 0.45px;
+  font-size: 25px;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 30px;
+}
+
+.exploreArtistsDiv2 .exploreArtistsSpan1 {
+  color: white;
+}
+
+.exploreArtistsDiv2 .exploreArtistsSpan2 {
+  color: rgb(126, 126, 126);
+}
+
+.exploreArtistCard {
+  box-shadow: 0px 0px 5px black;
+  transition: box-shadow 0.3s ease;
+}
+
+.exploreArtistCard:hover {
+  box-shadow: 0px 7px 12px black;
+}
+
+.exploreGenreDiv {
+  width: 83%;
+  height: 180vh;
+  background-image: linear-gradient(to top left, #121538, #392f4a);
+  position: absolute;
+  left: 17.8%;
+}
+
+.exploreGenreHeading {
+  color: #FFF;
+  font-family: Michroma;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 64.516% */
+  letter-spacing: 0.62px;
+  margin-left: 50px;
+  margin-top: 70px;
+  margin-bottom: 60px;
+}
+
+.exploreGenreInfoPic {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-left: 50px;
+}
+
+.exploreArtistCardDiv {
+  box-shadow: 0px 0px 5px black;
+  transition: box-shadow 0.3s ease;
+}
+
+.exploreArtistCardDiv:hover {
+  box-shadow: 0px 7px 12px rgb(126, 126, 126);
 }
