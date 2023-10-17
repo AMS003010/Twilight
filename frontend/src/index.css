@@ -1039,6 +1039,27 @@ form button {
   margin-left: 20px;
 }
 
+.exploreCenter .leftPanelComp.selected {
+  display: flex;
+  color: yellow;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  border-radius: 10px;
+  background-color: #383046;
+  width: 200px;
+  height: 55px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
 .leftPanelComp img {
   width: 30px;
   padding-right: 15px;
@@ -1083,10 +1104,10 @@ form button {
   font-style: normal;
   font-weight: 700;
   line-height: 40px; /* 64.516% */
-  letter-spacing: 0.62px;
+  letter-spacing: 0.65px;
   margin-left: 50px;
   margin-top: 70px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .exploreArtistsDiv1 {
@@ -1154,7 +1175,7 @@ form button {
   font-style: normal;
   font-weight: 700;
   line-height: 40px; /* 64.516% */
-  letter-spacing: 0.62px;
+  letter-spacing: 0.68px;
   margin-left: 50px;
   margin-top: 70px;
   margin-bottom: 60px;
