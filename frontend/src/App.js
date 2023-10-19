@@ -12,7 +12,6 @@ import Info from './pages/info';
 import Search from './pages/search';
 import Explore from './pages/explore';
 
-//import Testing from './components/state1';
 //import SongUpload from './components/uploadSong';
 //import FirebaseImageUpload from './components/uploadSong';
 //import SongUpload from './components/uploadSong';

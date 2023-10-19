@@ -8,7 +8,7 @@ const GenreComponentDiv = (props) => {
         backgroundPosition: 'center top',
         margin: '20px',
         borderRadius: '20px',
-        mixBlendMode: 'screen',
+        //mixBlendMode: 'screen',
         fontSize: '40px',
         fontFamily: 'Ubuntu',
         color: 'white',

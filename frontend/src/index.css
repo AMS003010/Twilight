@@ -1039,6 +1039,10 @@ form button {
   margin-left: 20px;
 }
 
+.exploreCenter .leftPanelComp:hover {
+  color: orange;
+}
+
 .exploreCenter .leftPanelComp.selected {
   display: flex;
   color: yellow;
@@ -1079,7 +1083,7 @@ form button {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  background-color: #33234d6b;
+  background-image: linear-gradient(to top left, #14081c, #272137);
   width: 100%;
   height: 65px;
   margin-top: 293px;
@@ -1088,13 +1092,14 @@ form button {
 .exploreUserProfile {
   width: 43px;
   height: 43px;
-  border-radius: 100%;
+  border-radius: 10px;
   background-image: url('../src/img/sunboy.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
   margin-left: 10px;
   margin-right: 10px;
+  border: 1px solid yellow;
 }
 
 .topArtistHeading {
@@ -1195,5 +1200,5 @@ form button {
 }
 
 .exploreArtistCardDiv:hover {
-  box-shadow: 0px 7px 12px rgb(126, 126, 126);
+  box-shadow: 0px 7px 12px black;
 }
