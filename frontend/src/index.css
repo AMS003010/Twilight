@@ -1083,7 +1083,7 @@ form button {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  background-image: linear-gradient(to top left, #14081c, #272137);
+  background-color: #1c1f40;
   width: 100%;
   height: 65px;
   margin-top: 293px;

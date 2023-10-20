@@ -6,16 +6,15 @@ import {
   listAll,
 } from "firebase/storage";
 import { storage } from "../firebase";
-import { v4 } from "uuid";
 
 function SongUpload() {
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
 
-  const imagesListRef = ref(storage, "images/");
+  const imagesListRef = ref(storage, "Images/SongImages ");
   const uploadFile = () => {
     if (imageUpload == null) return;
-    const imageRef = ref(storage, `images/${v4()}`);
+    const imageRef = ref(storage, `Images/SongImages/${imageUpload.name}`);
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
