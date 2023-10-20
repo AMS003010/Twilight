@@ -12,7 +12,7 @@ const {
     getLikedSongs
 } = require('../controllers/songController');
 
-router.post('/',admin,createSong);
+router.post('/',createSong); // admin needed
 
 router.get('/',getAllSongs);
 

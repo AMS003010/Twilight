@@ -1,51 +1,48 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ref,
-  uploadBytes,
   getDownloadURL,
   listAll,
 } from "firebase/storage";
 import { storage } from "../firebase";
 
 function SongUpload() {
-  const [imageUpload, setImageUpload] = useState(null);
-  const [imageUrls, setImageUrls] = useState([]);
-
-  const imagesListRef = ref(storage, "Images/SongImages ");
-  const uploadFile = () => {
-    if (imageUpload == null) return;
-    const imageRef = ref(storage, `Images/SongImages/${imageUpload.name}`);
-    uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        setImageUrls((prev) => [...prev, url]);
-      });
-    });
-  };
+  const [imageInfo, setImageInfo] = useState({});
 
   useEffect(() => {
-    listAll(imagesListRef).then((response) => {
-      response.items.forEach((item) => {
-        getDownloadURL(item).then((url) => {
-          setImageUrls((prev) => [...prev, url]);
+    const imagesListRef = ref(storage, "Images/SongImages");
+
+    listAll(imagesListRef)
+      .then((response) => {
+        const imageInfo = {};
+        const promises = response.items.map((item) =>
+          getDownloadURL(item).then((url) => {
+            imageInfo[item.name] = url;
+          })
+        );
+
+        Promise.all(promises).then(() => {
+          setImageInfo(imageInfo);
         });
+      })
+      .catch((error) => {
+        console.error("Error fetching image info:", error);
       });
-    });
-  },[]);
+  }, []);
 
   return (
     <div className="App">
-      <input
-        type="file"
-        onChange={(event) => {
-          setImageUpload(event.target.files[0]);
-        }}
-      />
-      <button onClick={uploadFile}> Upload Image</button>
-      {imageUrls.map((url) => {
-        return <img src={url} alt="k" style={{width: '200px'}}/>;
-      })}
+
+      {Object.keys(imageInfo).map((imageName) => (
+        <div key={imageName}>
+          <p>Image Name: {imageName}</p>
+          <img src={imageInfo[imageName]} alt="k" style={{ width: "200px" }} />
+        </div>
+      ))}
+
     </div>
   );
+  
 }
 
 export default SongUpload;
