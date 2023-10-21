@@ -6,7 +6,7 @@ const SearchBar = () => {
     return (
         <div className='searchDiv'>
             <Link className="searchLink" to="/search">
-                <img src={SearchImage}/>
+                <img src={SearchImage} alt='sb'/>
             </Link>
         </div>
     )

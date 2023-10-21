@@ -11,8 +11,9 @@ import Profile from './pages/profile';
 import Info from './pages/info';
 import Search from './pages/search';
 //import Explore from './pages/explore';
+import CreateSong from './components/SongUploader';
 
-import SongUpload from './components/uploadSong';
+//import SongUpload from './components/uploadSong';
 //import FirebaseImageUpload from './components/uploadSong';
 //import SongUpload from './components/uploadSong';
 
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route
             path='/'
-            element={<SongUpload />}
+            element={<CreateSong />}
           />
           <Route
             path='/aboutus'
