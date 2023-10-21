@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import Logo from '../components/logo'
 import HighlightedButton from '../components/highlightedButton'
 
-class intro extends React.Component {
+class Intro extends React.Component {
     render(){
         const mystyle = {
             backgroundColor: '#231C27',
@@ -47,4 +47,4 @@ class intro extends React.Component {
     }
 }
 
-export default intro
+export default Intro

@@ -4,18 +4,11 @@ import { UseUserContext } from './hooks/useUserContext';
 
 //import Home from './pages/home';
 import AboutUs from './pages/about us';
-import Intro from './pages/intro';
 import Login from './pages/login';
 import SignUp from './pages/sign up';
-import Profile from './pages/profile';
-import Info from './pages/info';
-import Search from './pages/search';
-//import Explore from './pages/explore';
-import CreateSong from './components/SongUploader';
-
-//import SongUpload from './components/uploadSong';
-//import FirebaseImageUpload from './components/uploadSong';
-//import SongUpload from './components/uploadSong';
+import Explore from './pages/explore';
+import Intro from './pages/intro';
+//import CreateSong from './components/SongUploader';
 
 function App() {
   const {user} = UseUserContext()
@@ -26,7 +19,7 @@ function App() {
         <Routes>
           <Route
             path='/'
-            element={<CreateSong />}
+            element={<Explore />}
           />
           <Route
             path='/aboutus'
@@ -38,23 +31,11 @@ function App() {
           />
           <Route
             path='/login'
-            element={!user ? <Login /> : <Profile />}
+            element={!user ? <Login /> : <Intro />}
           />
           <Route
             path='/signup'
-            element={!user ? <SignUp /> : <Profile />}
-          />
-          <Route
-            path='/profile'
-            element={<Profile/>}
-          />
-          <Route
-            path='/info'
-            element={<Info/>}
-          />
-          <Route
-            path='/search'
-            element={<Search/>}
+            element={!user ? <SignUp /> : <Intro />}
           />
         </Routes> 
       </div>
