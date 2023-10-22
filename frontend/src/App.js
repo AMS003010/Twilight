@@ -9,6 +9,7 @@ import SignUp from './pages/sign up';
 import Explore from './pages/explore';
 import Intro from './pages/intro';
 //import CreateSong from './components/SongUploader';
+//import PlaylistUploader from './components/PlaylistUploader';
 
 function App() {
   const {user} = UseUserContext()

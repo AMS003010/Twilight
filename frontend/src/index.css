@@ -1001,7 +1001,7 @@ form button {
 
 .exploreCarouselPageLayout {
   width: 83%;
-  height: 100vh;
+  height: 200vh;
   background-image: linear-gradient(to top left, #121538, #392f4a);
   align-items: center;
   position: absolute;
@@ -1201,4 +1201,48 @@ form button {
 
 .exploreArtistCardDiv:hover {
   box-shadow: 0px 7px 12px black;
+}
+
+.trendingSongsWrapper {
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: auto;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.trendingSongsWrapper .trendingSongsContainer {
+  white-space: nowrap;
+  display: inline-flex;
+}
+
+.trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv {
+  margin-right: 10px;
+  font-family: Poppins;
+}
+
+.trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .nameSpan {
+  color: white;
+}
+
+.trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .artistSpan {
+  color: rgb(126, 126, 126);
+}
+
+
+.trendingSongsHeading {
+  color: #FFF;
+  font-family: Michroma;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.68px;
+  margin-left: 50px;
 }

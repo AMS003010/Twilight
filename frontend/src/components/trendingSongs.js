@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const TrendingSongs = () => {
-  const [allSongs, setAllSongs] = useState(null);
+    const [allSongs, setAllSongs] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
+    useEffect(() => {
+        const fetchData = async () => {
         try {
             const response = await fetch('/api/song', {
                 method: 'GET',
@@ -18,23 +18,42 @@ const TrendingSongs = () => {
 
             const data = await response.json();
             setAllSongs(data);
-            console.log(allSongs.data);
             console.log("Loaded trending songs successfully");
         } catch (error) {
             console.error("Error fetching data:", error);
         }
-    };
+        };
 
-    fetchData();
-  }, []);
+        fetchData();
+    }, []);
 
-  return (
-    <div>
-        {allSongs.data.map((item) => (
-            <h1>{item.name}</h1>
-        ))}
-    </div>
-  );
+    return (
+        <div className="trendingSongsWrapper">
+            <div className="trendingSongsContainer">
+            {allSongs && allSongs.data ? (
+                allSongs.data.map((item) => (
+                <div className="trendingSongsInnerDiv">
+                    <div
+                    style={{
+                        backgroundImage: `url('${item.img}')`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center top',
+                        width: '200px',
+                        height: '200px',
+                        borderRadius: '20px'
+                    }}
+                    ></div>
+                    <span className="nameSpan">{item.name}</span><br/>
+                    <span className="artistSpan">{item.artist}</span>
+                </div>
+                ))
+            ) : (
+                <p>Loading...</p>
+            )}
+            </div>
+        </div>
+    );
 };
 
 export default TrendingSongs;

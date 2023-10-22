@@ -8,7 +8,7 @@ const createPlayList = async (req,res) => {
     if(error) {
         return res.status(400).send({message: error.details[0].message});
     }
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.body.user);  //req.user._id
     const playlist = await Playlist({...req.body,user:user._id}).save();
     user.playlists.push(playlist._id);
     await user.save();

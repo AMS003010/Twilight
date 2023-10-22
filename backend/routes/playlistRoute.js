@@ -14,7 +14,7 @@ const {
 const auth = require('../middleware/auth');
 const validateObjectId = require('../middleware/validateObjectId');
 
-router.post('/',auth,createPlayList);
+router.post('/',createPlayList);
 
 router.put('/edit/:id',[validateObjectId,auth],editPlayList);
 
