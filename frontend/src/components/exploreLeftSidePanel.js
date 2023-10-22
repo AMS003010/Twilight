@@ -46,7 +46,10 @@ const ExploreLeftSidePanel = ({ elementState, setElementState }) => {
                     <img src={artistIcon} alt='img'/>
                     Artists
                 </div>
-                <div className='leftPanelComp'>
+                <div
+                    className={`leftPanelComp ${isElementSelected(3) ? 'selected' : ''}`}
+                    onClick={() => handleElementClick(3)}
+                >
                     <img src={searchIcon} alt='img'/>
                     Search
                 </div>

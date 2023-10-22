@@ -4,11 +4,12 @@ import Discover from "../components/exploreDiscover";
 import Genre from "../components/exploreGenre";
 import Artists from "../components/exploreArtists";
 import ExploreLeftSidePanel from "../components/exploreLeftSidePanel";
+import Search from "../components/exploreSearch";
 
 const Explore = () => {
     const [elementState,setElementState] = useState(0);
 
-    const elementList = [<Discover/>,<Genre/>,<Artists/>]
+    const elementList = [<Discover/>,<Genre/>,<Artists/>,<Search/>]
 
     const mystyle = {
         backgroundColor: '#342844',

@@ -14,7 +14,7 @@ const {
 const auth = require('../middleware/auth');
 const validateObjectId = require('../middleware/validateObjectId');
 
-router.post('/',createPlayList);
+router.post('/',createPlayList); //auth
 
 router.put('/edit/:id',[validateObjectId,auth],editPlayList);
 
@@ -24,7 +24,7 @@ router.put('/remove-song',auth,removeSong);
 
 router.get('/favourite',auth,getUserPlayLists);
 
-router.get('/random',auth,getRandomPlaylists);
+router.get('/random',getRandomPlaylists);   //auth
 
 router.get('/:id',[validateObjectId,auth],getPlayList);
 
