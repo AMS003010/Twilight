@@ -1089,6 +1089,13 @@ form button {
   margin-top: 293px;
 }
 
+.userBox {
+  width: 170px; /* Set your desired width */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .exploreUserProfile {
   width: 43px;
   height: 43px;

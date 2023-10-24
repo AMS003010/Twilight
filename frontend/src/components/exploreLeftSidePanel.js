@@ -19,6 +19,8 @@ const ExploreLeftSidePanel = ({ elementState, setElementState }) => {
         return selectedElement === index;
     };
 
+    const user = JSON.parse(localStorage.getItem('user'))
+
     return (
         <div className='exploreLeftSideBar'>
             <div className='exploreLogoContainer'>
@@ -55,7 +57,7 @@ const ExploreLeftSidePanel = ({ elementState, setElementState }) => {
                 </div>
                 <div className='leftPaneUserComp'>
                     <div className='exploreUserProfile'></div>
-                    Username
+                    <div className='userBox'>{user.email}</div>
                 </div>
             </div>
         </div>
