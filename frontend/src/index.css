@@ -948,10 +948,12 @@ form button {
 
 #noOfList {
   color: white;
+  height: 50px;
 }
 
 #monList {
   color: rgb(126, 126, 126);
+  height: 50px;
 }
 
 /* Indicators */
@@ -1352,4 +1354,21 @@ form button {
   margin-bottom: 10px;
   font-family: Poppins;
   align-items: center;
+}
+
+.musicPlayerContainer {
+  position: fixed;
+  border: 3px solid yellow;
+  top: 86vh;
+  left: 275px;
+  width: 1113px;
+  height: 90px;
+  z-index: 3;
+  border-radius: 30px;
+  background-color: yellowgreen;
+  opacity: 0.5;
+}
+
+.musicPlayerContainer:hover {
+  opacity: 1;
 }

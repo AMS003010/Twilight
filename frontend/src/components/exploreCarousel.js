@@ -36,9 +36,9 @@ const Carousel = () => {
     <div className="carousel-container">
       <div className="carousel">
         <div style={{width:'100%',height:'100%',backgroundImage: `url(${images[currentIndex]})`}}>
-          <div className='infoDiv'>
+          <div className='infoDiv' style={{height:'100px'}}>
             <span className='exploreArtistName'>{names[currentName]}</span>
-            <div className='exploreCarouselInfo'>
+            <div className='exploreCarouselInfo' style={{height:'50px'}}>
               <span id='noOfList'>{listeners[currentListeners]}</span>
               <span id='monList'>&nbsp;monthly listeners</span>
             </div>

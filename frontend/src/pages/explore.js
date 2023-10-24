@@ -5,6 +5,7 @@ import Genre from "../components/exploreGenre";
 import Artists from "../components/exploreArtists";
 import ExploreLeftSidePanel from "../components/exploreLeftSidePanel";
 import Search from "../components/exploreSearch";
+import MusicPlayer from "../components/musicPlayer";
 
 const Explore = () => {
     const [elementState,setElementState] = useState(0);
@@ -19,6 +20,7 @@ const Explore = () => {
     return(
         <div style={mystyle}>
             <ExploreLeftSidePanel elementState={elementState} setElementState={setElementState}/>
+            <MusicPlayer/>
             {elementList[elementState]}
         </div>
     )
