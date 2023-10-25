@@ -2,7 +2,6 @@ import React from 'react';
 import Logo from '../components/logo';
 import Playlist from '../components/playlist';
 import ProfileInfo from '../components/profileInfo';
-import SearchBar from '../components/searchBar';
 
 class Profile extends React.Component {
 
@@ -43,7 +42,6 @@ class Profile extends React.Component {
             <div style={myStyle}>
                 <nav style={{ display: "flex" }}>
                     <Logo />
-                    <SearchBar />
                 </nav>
                 <div style={myStyle}>
                     <div className='profileDiv'>

@@ -643,7 +643,7 @@ form button {
   border: 1.454px solid #000;
   width: 230.194px;
   height: 32px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .logindiv .loginButton button{
@@ -720,7 +720,7 @@ form button {
   border: 1.454px solid #000;
   width: 230.194px;
   height: 32px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .signUpDiv .signUpColumn2 input {
@@ -729,7 +729,7 @@ form button {
   border: 1.454px solid #000;
   width: 230.194px;
   height: 32px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .signUpButton {
@@ -765,7 +765,15 @@ form button {
   margin-left: 50px;
 }
 
-.playlistContainer {
+.profileLogoContainer {
+  width: 51px;
+  height: 51px;
+  flex-shrink: 0;
+  border-radius: 200px;
+  padding: 12.5px ;
+}
+
+.playlistContainer, .artistSongContainer {
   position:relative;
   width: 384px;
   height: 80px;
@@ -777,7 +785,7 @@ form button {
   margin-bottom: 20.75px;
 }
 
-.playlistLogo {
+.playlistLogo, .artistSongLogo {
   position: absolute;
   display: flex;
   top: 5px;
@@ -789,13 +797,13 @@ form button {
   background: #4C3C4C;
 }
 
-.playlistInfo {
+.playlistInfo, .artistSongInfo {
   position: relative;
   left: 91px;
   width: 200px;
 }
 
-.playlistName {
+.playlistName, .artistSongName {
   position: absolute;
   top: -32px;
   color: #FFF;
@@ -860,6 +868,14 @@ form button {
   font-family: Poppins;
   font-size: 50px;
   font-weight: 400;
+  text-align: center;
+}
+
+.noMatch {
+  font-family: Poppins;
+  color: yellow;
+  font-size: 250px;
+  font-weight: bold;
   text-align: center;
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import Logo from '../components/logo'
 
@@ -11,6 +12,8 @@ const Login = () => {
             backgroundColor: '#231C27',
             height: '100vh',
         }
+        const signUpLink = <NavLink to={'/signup'} style={{fontFamily: 'Poppins'}}>Sign Up</NavLink>;
+
         const [email,setEmail] =  useState('')
         const [password,setPassword] = useState('')
         const {login,isLoading,error} = UseLogin()
@@ -56,6 +59,7 @@ const Login = () => {
                                 <button disabled={isLoading} onClick={handleClick}>Login</button>
                                 {error && <div className="error">{error}</div>}
                             </div>
+                            <h5 style={{fontFamily: 'Poppins'}}>Don't have an account? {signUpLink}.</h5>
                         </form>
                     </div>
                     <div className='loginCoverImage'></div>
