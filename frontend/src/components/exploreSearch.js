@@ -3,7 +3,7 @@ import { useState } from 'react';
 import searchIcon from '../img/searchBar.png';
 import emptyBox from '../img/emptyBox.png';
 
-const Search = () => {
+const Search = ({song,setSong}) => {
     const [query, setQuery] = useState("");
     const [songs, setSongs] = useState(null);
     const [playlists, setPlaylists] = useState(null);
@@ -23,6 +23,10 @@ const Search = () => {
         setSongs(data.songs);
         setPlaylists(data.playlists);
     };
+
+    const handleSongChange = (item) => {
+        setSong(item);
+    }
 
     return (
         <div className="searchContainer">
@@ -54,7 +58,7 @@ const Search = () => {
                             {songs ? (
                                 songs.map((s) => (
                                     <div className='searchBox'>
-                                        <div className='searchImg' style={{ backgroundImage: `url('${s.img}')` }}></div>
+                                        <div className='searchImg' style={{ backgroundImage: `url('${s.img}')` }} onClick={() => handleSongChange(s)}></div>
                                         <div>
                                             <span style={{ color: 'white' }}>Song</span><br />
                                             <span style={{ color: 'rgb(126, 126, 126)' }}>{s.name}</span><br />

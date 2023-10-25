@@ -1,6 +1,11 @@
-const MusicPlayer = ({songUrl}) => {
+const MusicPlayer = ({song,setSong}) => {
     return(
-        <div className='musicPlayerContainer'>
+        <div>        
+            {song ? (
+            <div className='musicPlayerContainer'>
+                <audio src={song.song} controls autoPlay></audio>
+            </div>
+        ) : (<p></p>)}
         </div>
     )
 }

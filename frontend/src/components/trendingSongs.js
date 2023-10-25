@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TrendingSongs = () => {
+const TrendingSongs = ({song,setSong}) => {
     const [allSongs, setAllSongs] = useState(null);
 
     useEffect(() => {
@@ -27,12 +27,16 @@ const TrendingSongs = () => {
         fetchData();
     }, []);
 
+    const handleClick = (item) => {
+        setSong(item);
+    }
+
     return (
         <div className="trendingSongsWrapper">
             <div className="trendingSongsContainer">
             {allSongs && allSongs.data ? (
                 allSongs.data.map((item) => (
-                <div className="trendingSongsInnerDiv">
+                <div className="trendingSongsInnerDiv" onClick={() => handleClick(item)}>
                     <div
                     style={{
                         backgroundImage: `url('${item.img}')`,

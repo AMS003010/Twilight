@@ -9,8 +9,9 @@ import MusicPlayer from "../components/musicPlayer";
 
 const Explore = () => {
     const [elementState,setElementState] = useState(0);
+    const [song,setSong] = useState(null);
 
-    const elementList = [<Discover/>,<Genre/>,<Artists/>,<Search/>]
+    const elementList = [<Discover song={song} setSong={setSong}/>,<Genre song={song} setSong={setSong}/>,<Artists song={song} setSong={setSong}/>,<Search song={song} setSong={setSong}/>]
 
     const mystyle = {
         backgroundColor: '#342844',
@@ -20,7 +21,7 @@ const Explore = () => {
     return(
         <div style={mystyle}>
             <ExploreLeftSidePanel elementState={elementState} setElementState={setElementState}/>
-            <MusicPlayer/>
+            <MusicPlayer song={song} setSong={setSong}/>
             {elementList[elementState]}
         </div>
     )
