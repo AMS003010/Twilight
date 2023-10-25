@@ -8,7 +8,7 @@ import Login from './pages/login';
 import SignUp from './pages/sign up';
 import Profile from './pages/profile';
 import ArtistInfo from './pages/artist';
-import Search from './pages/search';
+//import Search from './pages/search';
 import Explore from './pages/explore';
 import NoMatch from './pages/no match';
 
