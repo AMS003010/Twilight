@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import Logo from '../components/logo'
 
@@ -21,6 +21,8 @@ const SignUp = () => {
         const [gender,setGender] = useState('')
         const [selectedDate,setSelectedDate] = useState('')
         const {signup,isLoading,error} = UseSignUp()
+
+        const loginLink = <NavLink to={'/login'} style={{fontFamily: 'Poppins'}}>Login</NavLink>;
 
         const handleSubmit = async (e) => {
             e.preventDefault()
@@ -101,6 +103,7 @@ const SignUp = () => {
                         </div>
                         <button className='signUpButton' disabled={isLoading} onClick={handleClick}>Submit</button>
                         {error && <div className="error">{error}</div>}
+                        <h5 style={{fontFamily: 'Poppins'}}>Have an account? {loginLink}.</h5>
                     </form>
                 </div>
                 <div className='signUpUnderLayDiv'></div>
