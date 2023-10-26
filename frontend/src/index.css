@@ -1383,8 +1383,41 @@ form button {
   border-radius: 30px;
   background-color: yellowgreen;
   opacity: 0.5;
+  flex-direction: row;
+  text-align: center;
+  object-position: center;
+  align-items: center;
+  font-family: Poppins;
 }
 
 .musicPlayerContainer:hover {
   opacity: 1;
+}
+
+.muPlayPic {
+  width: 70px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.muPlayBut {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  border: none;
+  background-color: yellowgreen;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.muPlName {
+  flex-direction: column;
+  text-align: left;
 }
