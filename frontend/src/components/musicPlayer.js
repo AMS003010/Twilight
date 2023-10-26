@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
-import playIcon from '../img/play.png'
-import pauseIcon from '../img/pause.png'
-import soundIcon from '../img/sound.png'
+import playIcon from '../img/play.png';
+import pauseIcon from '../img/pause.png';
+import soundIcon from '../img/sound.png';
+import muteIcon from '../img/mute.png';
 
 const MusicPlayer = ({ song, setSong }) => {
   const [audio] = useState(new Audio());
@@ -10,8 +11,8 @@ const MusicPlayer = ({ song, setSong }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
+  const [soundImage, setSoundImage] = useState(soundIcon);
 
-  // Add a useEffect that listens for changes in the 'song' state
   useEffect(() => {
     if (song) {
       audio.src = song.song;
@@ -33,7 +34,6 @@ const MusicPlayer = ({ song, setSong }) => {
     };
   }, [song, isPlaying, volume]);
 
-  // Use this useEffect to set 'isPlaying' to true when 'song' changes
   useEffect(() => {
     setIsPlaying(true);
   }, [song]);
@@ -60,6 +60,16 @@ const MusicPlayer = ({ song, setSong }) => {
     audio.volume = e.target.value;
   };
 
+  const handleSoundImage = () => {
+    if (volume === 0) {
+      setSoundImage(soundIcon);
+      setVolume(1);
+    } else {
+      setSoundImage(muteIcon);
+      setVolume(0);
+    }
+  };
+
   return (
     <div>
       {song ? (
@@ -82,7 +92,7 @@ const MusicPlayer = ({ song, setSong }) => {
             style={{marginRight:'20px',width:'300px'}}
           />
           <div>{formatTime(duration)}</div>
-          <img src={soundIcon} alt="k" style={{width:'25px',marginLeft:'220px',marginRight:'10px'}}  />
+          <img src={soundImage} alt="k" style={{width:'25px',marginLeft:'220px',marginRight:'10px'}} onClick={() => handleSoundImage()} />
           <input
             type="range"
             min={0}
@@ -101,11 +111,8 @@ const MusicPlayer = ({ song, setSong }) => {
 
 export default MusicPlayer;
 
-// Function to format time in HH:MM:SS
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = Math.floor(seconds % 60);
   return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
 }
-
-// Left part of the currentTime span is moving as the numbers change
