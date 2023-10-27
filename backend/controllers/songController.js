@@ -29,6 +29,11 @@ const deleteSong = async (req,res) => {
     res.status(200).send({message: "Song successfully deleted"});
 };
 
+const getRandomSongs = async (req,res) => {
+    const songs = await  Song.aggregate([{$sample : {size:10}}])
+    res.status(200).send({data:songs});
+}
+
 const likeSong = async (req,res) => {
     let endMessage = "";
     const song = await Song.findById(req.params.id);
@@ -60,5 +65,6 @@ module.exports = {
     updateSong,
     deleteSong,
     likeSong,
-    getLikedSongs
+    getLikedSongs,
+    getRandomSongs    
 };

@@ -9,12 +9,15 @@ const {
     updateSong,
     deleteSong,
     likeSong,
-    getLikedSongs
+    getLikedSongs,
+    getRandomSongs
 } = require('../controllers/songController');
 
 router.post('/',createSong); // admin needed
 
 router.get('/',getAllSongs);
+
+router.get('/random',getRandomSongs);
 
 router.put('/:id',[validateObjectId,admin],updateSong);
 

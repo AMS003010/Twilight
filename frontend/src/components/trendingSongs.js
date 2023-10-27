@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+import loading from '../img/loading.gif'
+
 const TrendingSongs = ({song,setSong}) => {
     const [allSongs, setAllSongs] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
         try {
-            const response = await fetch('/api/song', {
+            const response = await fetch('/api/song/random', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             });
@@ -53,7 +55,7 @@ const TrendingSongs = ({song,setSong}) => {
                 </div>
                 ))
             ) : (
-                <p>Loading...</p>
+                <img src={loading} alt="k" width='100px'/>
             )}
             </div>
         </div>
