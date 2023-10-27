@@ -4,6 +4,8 @@ import playIcon from '../img/play.png';
 import pauseIcon from '../img/pause.png';
 import soundIcon from '../img/sound.png';
 import muteIcon from '../img/mute.png';
+import next from '../img/next.png';
+import prev from '../img/prev.png';
 
 const MusicPlayer = ({ song, setSong }) => {
   const [audio] = useState(new Audio());
@@ -80,18 +82,27 @@ const MusicPlayer = ({ song, setSong }) => {
             <div style={{fontWeight:'600'}}>{song.name}</div>
             <div style={{fontWeight:'500'}}>{song.artist}</div>
           </div>
-          <button onClick={togglePlayPause} style={{backgroundImage:`url('${isPlaying ? pauseIcon : playIcon}')`}} className="muPlayBut">
-          </button>
-          <div style={{width:'30px',marginRight:'25px'}}>{formatTime(currentTime)}</div>
-          <input
-            type="range"
-            min={0}
-            max={duration}
-            value={currentTime}
-            onChange={handleSliderChange}
-            style={{marginRight:'20px',width:'300px'}}
-          />
-          <div>{formatTime(duration)}</div>
+          <div style={{objectPosition:'center',textAlign:'center',alignItems:'center'}}>
+            <div style={{display:'flex',objectPosition:'center',textAlign:'center',alignItems:'center',marginLeft:'200px'}}>
+              <img src={prev} alt="k" width='25px'/>
+              <button onClick={togglePlayPause} style={{backgroundImage:`url('${isPlaying ? pauseIcon : playIcon}')`}} className="muPlayBut">
+              </button>
+              <img src={next} alt="k" width='25px'/>
+            </div>
+            <div style={{display:'flex',objectPosition:'center',textAlign:'center',alignItems:'center',marginLeft:'50px'}}>
+              <div style={{width:'30px',marginRight:'25px'}}>{formatTime(currentTime)}</div>
+              <input
+                type="range"
+                min={0}
+                max={duration}
+                value={currentTime}
+                onChange={handleSliderChange}
+                style={{marginRight:'20px',width:'300px'}}
+              />
+              <div>{formatTime(duration)}</div>
+            </div>
+          </div>
+          
           <img src={soundImage} alt="k" style={{width:'25px',marginLeft:'220px',marginRight:'10px'}} onClick={() => handleSoundImage()} />
           <input
             type="range"

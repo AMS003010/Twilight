@@ -1374,20 +1374,21 @@ form button {
 
 .musicPlayerContainer {
   position: fixed;
-  border: 3px solid yellow;
+  border: 3px solid rgba(8, 0, 255, 0.438);
   top: 86vh;
   left: 275px;
   width: 1113px;
   height: 90px;
   z-index: 3;
   border-radius: 30px;
-  background-color: yellowgreen;
+  background-color: #231C27;
   opacity: 0.5;
   flex-direction: row;
   text-align: center;
   object-position: center;
   align-items: center;
   font-family: Poppins;
+  color: white;
 }
 
 .musicPlayerContainer:hover {
