@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import playIcon from '../img/play.png';
 import pauseIcon from '../img/pause.png';
@@ -8,59 +8,46 @@ import next from '../img/next.png';
 import prev from '../img/prev.png';
 
 const MusicPlayer = ({ song, setSong }) => {
-  const [audio] = useState(new Audio());
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [volume, setVolume] = useState(1);
   const [soundImage, setSoundImage] = useState(soundIcon);
+  const [volume, setVolume] = useState(1); // Initialize volume at maximum (1)
+  const audioRef = useRef(null);
 
-  useEffect(() => {
-    if (song) {
-      audio.src = song.song;
-
-      audio.addEventListener("timeupdate", handleTimeUpdate);
-      audio.addEventListener("loadeddata", handleLoadedData);
-      audio.volume = volume;
-
-      if (isPlaying) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
+  const togglePlayback = () => {
+    const audio = audioRef.current;
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
     }
-
-    return () => {
-      audio.removeEventListener("timeupdate", handleTimeUpdate);
-      audio.removeEventListener("loadeddata", handleLoadedData);
-    };
-  }, [song, isPlaying, volume]);
-
-  useEffect(() => {
-    setIsPlaying(true);
-  }, [song]);
-
-  const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
-  };
+  }
 
   const handleTimeUpdate = () => {
-    setCurrentTime(audio.currentTime);
-  };
+    setCurrentTime(audioRef.current.currentTime);
+  }
 
-  const handleLoadedData = () => {
-    setDuration(audio.duration);
-  };
+  const handleLoadedMetadata = () => {
+    setDuration(audioRef.current.duration);
+  }
+
+  const handleEnded = () => {
+    setIsPlaying(false); // Set the button to "Play" state when the music ends
+  }
 
   const handleSliderChange = (e) => {
-    setCurrentTime(e.target.value);
-    audio.currentTime = e.target.value;
-  };
+    const newTime = parseFloat(e.target.value);
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime);
+  }
 
   const handleVolumeChange = (e) => {
-    setVolume(e.target.value);
-    audio.volume = e.target.value;
-  };
+    const newVolume = parseFloat(e.target.value);
+    audioRef.current.volume = newVolume;
+    setVolume(newVolume);
+  }
 
   const handleSoundImage = () => {
     if (volume === 0) {
@@ -72,30 +59,48 @@ const MusicPlayer = ({ song, setSong }) => {
     }
   };
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.addEventListener('timeupdate', handleTimeUpdate);
+      audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.addEventListener('ended', handleEnded);
+      return () => {
+        audio.removeEventListener('timeupdate', handleTimeUpdate);
+        audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+        audio.removeEventListener('ended', handleEnded);
+      };
+    }
+  }, []);
+
   return (
     <div>
       {song ? (
         <div className="musicPlayerContainer" style={{ display: "flex" }}>
-          <audio controls id="audio-element" hidden autoPlay></audio>
+          <audio
+            ref={audioRef}
+            controls
+            autoPlay
+            src={song.song}
+            style={{ visibility: "hidden" }} // Use CSS visibility to hide the audio element
+          ></audio>
           <div style={{backgroundImage:`url('${song.img}')`}} className="muPlayPic"></div>
           <div className="muPlName">
-            <div style={{fontWeight:'600'}}>{song.name}</div>
-            <div style={{fontWeight:'500'}}>{song.artist}</div>
+            <div style={{fontWeight:'600',letterSpacing:'0.65px',width:'200px'}}>{song.name}</div>
+            <div style={{fontWeight:'500',letterSpacing:'0.65px',width:'200px'}}>{song.artist}</div>
           </div>
-          <div style={{objectPosition:'center',textAlign:'center',alignItems:'center'}}>
-            <div style={{display:'flex',objectPosition:'center',textAlign:'center',alignItems:'center',marginLeft:'200px'}}>
-              <img src={prev} alt="k" width='25px'/>
-              <button onClick={togglePlayPause} style={{backgroundImage:`url('${isPlaying ? pauseIcon : playIcon}')`}} className="muPlayBut">
-              </button>
-              <img src={next} alt="k" width='25px'/>
+          <div style={{objectPosition:'center',textAlign:'center',alignItems:'center',marginLeft:'30px'}}>
+            <div style={{display:'flex',objectPosition:'center',textAlign:'center',alignItems:'center',marginLeft:'190px'}}>
+              <button style={{backgroundImage: `url('${prev}')`}} className="muPlayIco"></button>
+              <button onClick={togglePlayback} style={{backgroundImage:`url('${isPlaying ? pauseIcon : playIcon}')`}} className="muPlayBut"></button>
+              <button style={{backgroundImage: `url('${next}')`}} className="muPlayIco"></button>
             </div>
             <div style={{display:'flex',objectPosition:'center',textAlign:'center',alignItems:'center',marginLeft:'50px'}}>
               <div style={{width:'30px',marginRight:'25px'}}>{formatTime(currentTime)}</div>
               <input
                 type="range"
-                min={0}
-                max={duration}
                 value={currentTime}
+                max={duration}
                 onChange={handleSliderChange}
                 style={{marginRight:'20px',width:'300px'}}
               />
@@ -103,13 +108,13 @@ const MusicPlayer = ({ song, setSong }) => {
             </div>
           </div>
           
-          <img src={soundImage} alt="k" style={{width:'25px',marginLeft:'220px',marginRight:'10px'}} onClick={() => handleSoundImage()} />
+          <img src={soundImage} alt="k" style={{width:'25px',marginLeft:'120px',marginRight:'10px'}} onClick={() => handleSoundImage()} />
           <input
             type="range"
+            value={volume}
             min={0}
             max={1}
-            step={0.1}
-            value={volume}
+            step={0.01}
             onChange={handleVolumeChange}
           />
         </div>
@@ -120,10 +125,11 @@ const MusicPlayer = ({ song, setSong }) => {
   );
 };
 
-export default MusicPlayer;
-
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = Math.floor(seconds % 60);
-  return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+function formatTime(timeInSeconds) {
+  const minutes = Math.floor(timeInSeconds / 60);
+  const seconds = Math.floor(timeInSeconds % 60);
+  const formattedTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  return formattedTime;
 }
+
+export default MusicPlayer;

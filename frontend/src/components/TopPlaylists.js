@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import loading from '../img/loading.gif'
-
 const TopPlaylists = () => {
     const [randomPlaylists,setRandomPlaylists] =  useState(null);
 
@@ -50,7 +48,7 @@ const TopPlaylists = () => {
                 </div>
                 ))
             ) : (
-                <img src={loading} alt="k" width='100px'/>
+                <p>Loading....</p>
             )}
             </div>
         </div>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import loading from '../img/loading.gif'
-
 const TrendingSongs = ({song,setSong}) => {
     const [allSongs, setAllSongs] = useState(null);
 
@@ -55,7 +53,7 @@ const TrendingSongs = ({song,setSong}) => {
                 </div>
                 ))
             ) : (
-                <img src={loading} alt="k" width='100px'/>
+                <p>Loading....</p>
             )}
             </div>
         </div>

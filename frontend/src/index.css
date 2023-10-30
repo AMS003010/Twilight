@@ -1413,9 +1413,20 @@ form button {
   background-position: center top;
   background-size: cover;
   border: none;
-  background-color: yellowgreen;
+  background-color: #231C27;
   margin-left: 30px;
-  margin-right: 20px;
+
+  margin-right: 30px;
+}
+
+.muPlayIco {
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  border: none;
+  background-color: #231C27;
 }
 
 .muPlName {
