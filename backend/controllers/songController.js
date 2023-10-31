@@ -40,7 +40,7 @@ const likeSong = async (req,res) => {
     if (!song) {
         return res.status(400).send({message: "Song does not exists"});
     }
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.body._id);
     const index = await user.likedsongs.indexOf(song._id);
     if(index === -1) {
         user.likedsongs.push(song._id);

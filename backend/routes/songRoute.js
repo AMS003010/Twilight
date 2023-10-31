@@ -23,7 +23,7 @@ router.put('/:id',[validateObjectId,admin],updateSong);
 
 router.delete('/:id',[validateObjectId,admin],deleteSong);
 
-router.put('/like/:id',[validateObjectId,auth],likeSong);
+router.put('/like/:id',likeSong); //,[validateObjectId,auth]
 
 router.get('/like/:id',getLikedSongs);
 

@@ -10,7 +10,7 @@ import prev from '../img/prev.png';
 const MusicPlayer = ({ song, setSong }) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  //const [duration, setDuration] = useState(0);
   const [soundImage, setSoundImage] = useState(soundIcon);
   const [volume, setVolume] = useState(1); // Initialize volume at maximum (1)
   const audioRef = useRef(null);
@@ -28,11 +28,11 @@ const MusicPlayer = ({ song, setSong }) => {
   const handleTimeUpdate = () => {
     setCurrentTime(audioRef.current.currentTime);
   }
-
+  /*
   const handleLoadedMetadata = () => {
     setDuration(audioRef.current.duration);
     audioRef.current.play(); // Play the audio once it's fully loaded
-  }
+  }*/
 
   const handleEnded = () => {
     setIsPlaying(false); // Set the button to "Play" state when the music ends
@@ -77,9 +77,10 @@ const MusicPlayer = ({ song, setSong }) => {
       {song ? (
         <div className="musicPlayerContainer" style={{ display: "flex" }}>
           <audio
-            id="#audioEle"
+            id="audioEle"
             ref={audioRef}
             controls
+            preload
             src={song.song}
             style={{ visibility: "hidden" }} // Use CSS visibility to hide the audio element
           ></audio>
@@ -99,11 +100,11 @@ const MusicPlayer = ({ song, setSong }) => {
               <input
                 type="range"
                 value={currentTime}
-                max={duration}
+                max={song.duration}
                 onChange={handleSliderChange}
                 style={{marginRight:'20px',width:'300px'}}
               />
-              <div>{formatTime(duration)}</div>
+              <div>{formatTime(song.duration)}</div>
             </div>
           </div>
           
