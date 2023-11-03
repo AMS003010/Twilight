@@ -4,7 +4,8 @@ const {
     getAllUsers,
     getUser,
     updateUser,
-    deleteUser 
+    deleteUser,
+    findUserByEmail
 } = require('../controllers/userController');
 const admin = require('../middleware/admin');
 const auth = require('../middleware/auth');
@@ -13,6 +14,8 @@ const validateObjectId = require('../middleware/validateObjectId');
 const router = express.Router()
 
 router.post("/", addUser);
+
+router.get("/email",findUserByEmail);
 
 router.get("/",admin,getAllUsers);
 

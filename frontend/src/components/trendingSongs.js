@@ -1,25 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-import { User } from "../../../backend/models/twilightUserModel";
-
 import heartEmpty from '../img/heartE.png';
+import heartFull from '../img/heartF.png';
 
 const TrendingSongs = ({song,setSong}) => {
     const [allSongs, setAllSongs] = useState(null);
-
-    const user = JSON.parse(localStorage.getItem('user'))
+    const [like,setLike] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
         try {
-            const userData = await User.findOne({email:user.email});
-
-            const responseLiked = await fetch(`/api/song/:${userData._id}`, {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json' }
-            });
-
-            console.log(responseLiked.json());
+            
 
             const response = await fetch('/api/song/random', {
                 method: 'GET',
@@ -42,6 +33,30 @@ const TrendingSongs = ({song,setSong}) => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        const fetchLikes = async () => {
+        try {
+            
+            const user = JSON.parse(localStorage.getItem('user'))
+            const userEmail = user.email;
+            console.log(userEmail);
+            const responseLiked = await fetch(`/api/user/email?email=${userEmail}`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            const likes =  await responseLiked.json();
+            setLike(likes);
+            console.log(like);
+            
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+        };
+
+        fetchLikes();
+    }, []);
+
     const handleClick = (item) => {
         setSong(item);
     }
@@ -49,7 +64,7 @@ const TrendingSongs = ({song,setSong}) => {
     return (
         <div className="trendingSongsWrapper">
             <div className="trendingSongsContainer">
-            {allSongs && allSongs.data ? (
+            {like && allSongs && allSongs.data ? (
                 allSongs.data.map((item) => (
                 <div className="trendingSongsInnerDiv">
                     <div
@@ -70,7 +85,7 @@ const TrendingSongs = ({song,setSong}) => {
                             <span className="artistSpan">{item.artist}</span>
                         </div>
                         <div style={{textAlign:'right'}}>
-                            <img src={heartEmpty} alt="k" width='20px' height='20px'/>
+                            <img src={like && like.data.likedsongs.includes(item._id) ? heartFull : heartEmpty} alt="k" width='20px' height='20px'/>
                         </div>
                     </div>
                 </div>

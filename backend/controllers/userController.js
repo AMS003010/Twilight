@@ -1,6 +1,7 @@
 const {User,validate} = require('../models/twilightUserModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { use } = require('../routes/songRoute');
 
 const generateAuthToken = (_id) => {
     return jwt.sign({_id},process.env.SECRET,{expiresIn: '3d'})
@@ -56,10 +57,24 @@ const deleteUser = async (req,res) => {
     res.status(200).send({message: "Successfully deleted profile"});
 };
 
+const findUserByEmail = async (req, res) => {
+    const userEmail = req.query.email;
+    const user = await User.findOne({ email: userEmail });
+
+    if (!user) {
+        return res.status(404).send({ error: "User not found" });
+    }
+
+    res.status(200).send({ data: user });
+};
+
+
+
 module.exports = {
     addUser,
     getAllUsers,
     getUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    findUserByEmail
 };
