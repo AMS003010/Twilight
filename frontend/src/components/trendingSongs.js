@@ -36,7 +36,6 @@ const TrendingSongs = ({song,setSong}) => {
     useEffect(() => {
         const fetchLikes = async () => {
         try {
-            
             const user = JSON.parse(localStorage.getItem('user'))
             const userEmail = user.email;
             console.log(userEmail);
@@ -60,6 +59,27 @@ const TrendingSongs = ({song,setSong}) => {
     const handleClick = (item) => {
         setSong(item);
     }
+
+    const likeSongOrUnlike = async (id) => {
+        try {
+            const response = await fetch(`/api/song/like:${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' }
+            });
+            const data = response.json();
+            if(data.message === "Removed from liked songs"){
+                like.data.likedsongs.filter((ele) => ele!==id);
+                setLike(like);
+            } 
+            if(data.message === "Added to liked songs"){
+                like.data.likedsongs.push(id);
+                setLike(like);
+            }
+            console.log(data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }; 
+    };
 
     return (
         <div className="trendingSongsWrapper">
@@ -85,7 +105,13 @@ const TrendingSongs = ({song,setSong}) => {
                             <span className="artistSpan">{item.artist}</span>
                         </div>
                         <div style={{textAlign:'right'}}>
-                            <img src={like && like.data.likedsongs.includes(item._id) ? heartFull : heartEmpty} alt="k" width='20px' height='20px'/>
+                            <img 
+                                src={like && like.data.likedsongs.includes(item._id) ? heartFull : heartEmpty} 
+                                alt="k" 
+                                width='20px' 
+                                height='20px'
+                                onClick={() => likeSongOrUnlike()}
+                            />
                         </div>
                     </div>
                 </div>
