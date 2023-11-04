@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import blueTick from '../img/blueTick.png'
 
 const ArtistCompDiv = (props) => {
@@ -14,14 +16,16 @@ const ArtistCompDiv = (props) => {
     }
     return(
         <div className='exploreArtistCard' style={divStyle}>
-            <div className='exploreArtistsDiv1'>
-                <span>{props.name}</span>
-                <img src={blueTick} alt='img'/>
-            </div>
-            <div className='exploreArtistsDiv2'>
-                <span className='exploreArtistsSpan1'>{props.listeners}</span>
-                <span className='exploreArtistsSpan2'>&nbsp;monthly listeners</span>
-            </div>
+            <Link to={`/artist/${props.name}`} style={{textDecoration:'none'}}>
+                <div className='exploreArtistsDiv1'>
+                    <span>{props.name}</span>
+                    <img src={blueTick} alt='img'/>
+                </div>
+                <div className='exploreArtistsDiv2'>
+                    <span className='exploreArtistsSpan1'>{props.listeners}</span>
+                    <span className='exploreArtistsSpan2'>&nbsp;monthly listeners</span>
+                </div>
+            </Link>
         </div>
     )
 }

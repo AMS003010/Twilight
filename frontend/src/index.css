@@ -872,11 +872,13 @@ form button {
 }
 
 .noMatch {
-  font-family: Poppins;
+  font-family: Monoton;
   color: yellow;
-  font-size: 250px;
+  font-size: 200px;
   font-weight: bold;
   text-align: center;
+  height: 100vh;
+  letter-spacing: 1.5%;
 }
 
 .searchDiv {

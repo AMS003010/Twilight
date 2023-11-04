@@ -1,10 +1,10 @@
 import ArtistCompDiv from "./artistComponentDiv";
 
-import artist1 from '../img/artist2.jpg'
-import artist2 from '../img/artist4.png'
-import artist3 from '../img/artist5.jpg'
-import artist4 from '../img/artist3.jpg'
-import artist5 from '../img/artist1.jpg'
+import artist1 from '../img/Lil Nas X.jpg'
+import artist2 from '../img/Kanye West.png'
+import artist3 from '../img/Michael Jackson.jpg'
+import artist4 from '../img/Taylor Swift.jpg'
+import artist5 from '../img/Maroon 5.jpg'
 
 const Artists = () => {
     return(
