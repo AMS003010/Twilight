@@ -36,12 +36,19 @@ const getRandomSongs = async (req,res) => {
 
 const likeSong = async (req,res) => {
     let endMessage = "";
+    console.log(req.params.id);
     const song = await Song.findById(req.params.id);
+    console.log(song);
+    console.log("41\n");
     if (!song) {
         return res.status(400).send({message: "Song does not exists"});
     }
+    console.log("45\n");
     const user = await User.findById(req.body._id);
+    console.log(user);
+    console.log("47\n");
     const index = await user.likedsongs.indexOf(song._id);
+    console.log("49\n");
     if(index === -1) {
         user.likedsongs.push(song._id);
         endMessage = "Added to liked songs";

@@ -62,24 +62,38 @@ const TrendingSongs = ({song,setSong}) => {
 
     const likeSongOrUnlike = async (id) => {
         try {
-            const response = await fetch(`/api/song/like:${id}`, {
+            const userId = like.data._id;
+            console.log("SongId " + id);
+            console.log("userId " + userId);
+    
+            const response = await fetch(`/api/song/like/${id}`, {
                 method: 'PUT',
-                headers: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ "_id": userId })
             });
-            const data = response.json();
-            if(data.message === "Removed from liked songs"){
-                like.data.likedsongs.filter((ele) => ele!==id);
-                setLike(like);
-            } 
-            if(data.message === "Added to liked songs"){
-                like.data.likedsongs.push(id);
-                setLike(like);
+    
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+    
+                const def = { ...like }; // Make a copy of the state
+    
+                if (data.message === "Removed from liked songs") {
+                    def.data.likedsongs = def.data.likedsongs.filter((ele) => ele !== id);
+                    setLike(def);
+                }
+                if (data.message === "Added to liked songs") {
+                    def.data.likedsongs.push(id);
+                    setLike(def);
+                }
+            } else {
+                console.error("Error in response:", response);
             }
-            console.log(data);
         } catch (error) {
             console.error("Error fetching data:", error);
-        }; 
+        }
     };
+    
 
     return (
         <div className="trendingSongsWrapper">
@@ -110,7 +124,7 @@ const TrendingSongs = ({song,setSong}) => {
                                 alt="k" 
                                 width='20px' 
                                 height='20px'
-                                onClick={() => likeSongOrUnlike()}
+                                onClick={() => likeSongOrUnlike(item._id)}
                             />
                         </div>
                     </div>
