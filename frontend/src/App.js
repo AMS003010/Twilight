@@ -10,6 +10,7 @@ import SignUp from './pages/sign up';
 import Explore from './pages/explore';
 import NoMatch from './pages/no match';
 import ArtistDetail from './components/artistDetail';
+import UserPage from './pages/user';
 
 //import CreateSong from './components/SongUploader';
 //import SongUpload from './components/uploadSong';
@@ -29,6 +30,8 @@ function App() {
           <Route path='/aboutus' element={<AboutUs />} />
 
           <Route path='/intro' element={<Intro />} />
+
+          <Route path='/user' element={<UserPage />} />
 
           <Route path='/login' element={!user ? <Login /> : <Intro />} />
 

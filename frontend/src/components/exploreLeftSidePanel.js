@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Logo from '../components/logo';
 
@@ -55,9 +56,13 @@ const ExploreLeftSidePanel = ({ elementState, setElementState }) => {
                     <img src={searchIcon} alt='img'/>
                     Search
                 </div>
-                <div className='leftPaneUserComp'>
-                    <div className='exploreUserProfile'></div>
-                    <div className='userBox'>{user.email}</div>
+                <div>
+                    <Link to='/user' style={{textDecoration:'none'}}>
+                        <div className='leftPaneUserComp'>
+                            <div className='exploreUserProfile'></div>
+                            <div className='userBox'>{user.email}</div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
