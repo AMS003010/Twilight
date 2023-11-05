@@ -66,6 +66,16 @@ const getLikedSongs = async (req,res) => {
     res.status(200).send({data: songs});
 };
 
+const getUserLikedSongs = async (req,res) => {
+    const userEmail = req.query.email;
+    const user = await User.findOne({ email: userEmail });
+    const songs = await Song.find({_id: user.likedsongs});
+    if (!user) {
+        return res.status(404).send({ error: "User not found" });
+    }
+    res.status(200).send({ "user":user,"likedsongs": songs });
+};
+
 module.exports = {
     createSong,
     getAllSongs,
@@ -73,5 +83,6 @@ module.exports = {
     deleteSong,
     likeSong,
     getLikedSongs,
-    getRandomSongs    
+    getRandomSongs,
+    getUserLikedSongs   
 };

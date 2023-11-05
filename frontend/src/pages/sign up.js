@@ -102,8 +102,8 @@ const SignUp = () => {
                             </div>
                         </div>
                         <button className='signUpButton' disabled={isLoading} onClick={handleClick}>Submit</button>
-                        {error && <div className="error">{error}</div>}
                         <h5 style={{fontFamily: 'Poppins'}}>Have an account? {loginLink}.</h5>
+                        {error && <div className="error" style={{marginTop:'40px'}}>{error}</div>}
                     </form>
                 </div>
                 <div className='signUpUnderLayDiv'></div>

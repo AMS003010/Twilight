@@ -55,8 +55,8 @@ const ArtistDetail = (props) => {
         <div style={mystyle}>
             <Logo />
             <h1 style={divStyle}>{name}</h1>
-            <div style={{display:'flex'}}> 
-                <div className='searchResultsWrapper' style={{marginLeft:'50px',height:'50%'}}>
+            <div style={{display:'flex'}}>
+                <div className='searchResultsWrapper' style={{marginLeft:'50px',height:'50vh'}}>
                     <div className='searchResultsContainer'>
                         {songs  ? ( // Check if songs and songs.data are not null
                             songs.map((s) => (

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { UseUserContext } from './hooks/useUserContext';
 
-//import Home from './pages/home';
+import Home from './pages/home';
 import AboutUs from './pages/about us';
 import Intro from './pages/intro';
 import Login from './pages/login';
@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
       <div className='pages'>
         <Routes>
-          <Route path='/' element={<Explore />} />
+          <Route path='/' element={<Home />} />
 
           <Route path='/aboutus' element={<AboutUs />} />
 
@@ -33,9 +33,11 @@ function App() {
 
           <Route path='/user' element={<UserPage />} />
 
-          <Route path='/login' element={!user ? <Login /> : <Intro />} />
+          <Route path='/login' element={!user ? <Login /> : <Explore />} />
 
-          <Route path='/signup' element={!user ? <SignUp /> : <Intro />} />
+          <Route path='/signup' element={!user ? <SignUp /> : <Explore />} />
+
+          <Route path='/explore' element={!user ? <Login /> : <Explore />} />
 
           <Route path="/artist/:name" element={<ArtistDetail />} />
 

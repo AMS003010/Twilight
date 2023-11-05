@@ -25,7 +25,7 @@ const Login = () => {
         }
 
         const handleClick = () => {
-            <Link to='/profile'/>
+            <Link to='/explore'/>
         }
 
         return(
@@ -57,9 +57,9 @@ const Login = () => {
                             </div>
                             <div className='loginButton'>
                                 <button disabled={isLoading} onClick={handleClick}>Login</button>
-                                {error && <div className="error">{error}</div>}
                             </div>
                             <h5 style={{fontFamily: 'Poppins'}}>Don't have an account? {signUpLink}.</h5>
+                            {error && <div className="error" style={{marginTop:'60px'}}>{error}</div>} 
                         </form>
                     </div>
                     <div className='loginCoverImage'></div>

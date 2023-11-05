@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { UseLogout } from '../hooks/useLogout';
+
 import Logo from '../components/logo';
 
 import discoverIcon from '../img/discover.png'
@@ -10,6 +12,7 @@ import searchIcon from '../img/search.png'
 
 const ExploreLeftSidePanel = ({ elementState, setElementState }) => {
     const [selectedElement, setSelectedElement] = useState(0);
+    const { logout } =  UseLogout();
 
     const handleElementClick = (index) => {
         setSelectedElement(index);
@@ -21,6 +24,11 @@ const ExploreLeftSidePanel = ({ elementState, setElementState }) => {
     };
 
     const user = JSON.parse(localStorage.getItem('user'))
+
+    const handleLogout = async (e) => {
+        await logout();
+        <Link to='/login'/>
+    }
 
     return (
         <div className='exploreLeftSideBar'>
@@ -55,6 +63,13 @@ const ExploreLeftSidePanel = ({ elementState, setElementState }) => {
                 >
                     <img src={searchIcon} alt='img'/>
                     Search
+                </div>
+                <div
+                    className={`leftPanelComp ${isElementSelected(3) ? 'selected' : ''}`}
+                    onClick={() => handleLogout()}
+                    style={{justifyContent:'center'}}
+                >
+                    LOGOUT
                 </div>
                 <div>
                     <Link to='/user' style={{textDecoration:'none'}}>

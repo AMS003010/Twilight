@@ -10,12 +10,15 @@ const {
     deleteSong,
     likeSong,
     getLikedSongs,
-    getRandomSongs
+    getRandomSongs,
+    getUserLikedSongs
 } = require('../controllers/songController');
 
 router.post('/',createSong); // admin needed
 
 router.get('/',getAllSongs);
+
+router.get('/liked',getUserLikedSongs);
 
 router.get('/random',getRandomSongs);
 
