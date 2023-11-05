@@ -4,6 +4,7 @@ import Logo from '../components/logo';
 
 import artistBg from '../img/artistBg.jpg';
 import sunBoy from '../img/sunboy.jpg';
+import moonMan from '../img/moonMan.png'
 
 const UserPage = () => {
     const [mySongs, setMySongs] = useState([]);
@@ -101,7 +102,7 @@ const UserPage = () => {
                 <div  style={div2Style}>L<br/>I<br/>K<br/>E<br/>D<br/> <br/>S<br/>O<br/>N<br/>G<br/>S</div>
                 <div className='searchResultsWrapper' style={{ margin: '50px', height: '80%',borderColor:'#231c27',borderWidth:'8px',marginLeft:'10px'}}>
                     <div className='searchResultsContainer'>
-                        {mySongs.likedsongs ? (
+                        {mySongs.likedsongs && mySongs.likedsongs[0] ? (
                             mySongs.likedsongs.map((s) => (
                                 <div className='searchBox' key={s._id} style={{backgroundColor:'#231c27',borderRadius:'20px',padding:'10px'}}>
                                     <div className='searchImg' style={{ backgroundImage: `url('${s.img}')` }}></div>
@@ -113,7 +114,10 @@ const UserPage = () => {
                                 </div>
                             ))
                         ) : (
-                            <p>Loading....</p>
+                            <div style={{textAlign:'center',objectPosition:'center',fontFamily:'Poppins',fontSize:'40px',color:'white',fontWeight:'900',justifyContent:'center',alignItems:'center',display:'flex',flexDirection:'column',marginTop:'25%'}}>
+                                <img src={moonMan} alt='k' width='120px' height='120px'/>
+                                <div>Why so shy.<br/>Go ❤️ some songs</div>
+                            </div>
                         )}
                     </div>
                 </div>
