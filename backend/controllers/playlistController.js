@@ -45,12 +45,13 @@ const addSongToPlayList = async (req,res) => {
     const scheme =joi.object({
         playlistId: joi.string().required(),
         songId: joi.string().required(),
+        userId: joi.string().required(),
     });
     const {error} = scheme.validate(req.body);
     if(error) {
         return res.status(400).send({message: error.details[0].message});
     }
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.body.userId);  //const user = await User.findById(req.user._id);
     const playlist = await Playlist.findById(req.body.playlistId);
     if (!user._id.equals(playlist.user)) {
         return res.status(403).send({message: "User is not authorized to add song"})

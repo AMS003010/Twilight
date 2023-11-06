@@ -994,6 +994,8 @@ form button {
 
 .indicator.active {
   background-color: #007bff;
+  width: 6px;
+  height: 6px;
 }
 
 /*       style   */
@@ -1023,7 +1025,7 @@ form button {
 .exploreCarouselPageLayout {
   width: 83%;
   height: 200vh;
-  background-image: linear-gradient(to top left, #121538, #392f4a);
+  background-image: linear-gradient(to top left, #090b24, #392f4a);
   align-items: center;
   position: absolute;
   left: 17.8%;
@@ -1256,8 +1258,14 @@ form button {
   font-family: Poppins;
 }
 
-.trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv div {
+.trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .imgContainer {
   margin-bottom: 10px;
+  box-shadow: 0px 0px 5px black;
+  transition: box-shadow 0.5s ease;
+}
+
+.trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .imgContainer:hover {
+  box-shadow: 0px 7px 12px black;
 }
 
 .trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .nameSpan {

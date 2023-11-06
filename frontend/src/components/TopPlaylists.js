@@ -34,6 +34,7 @@ const TopPlaylists = () => {
                 randomPlaylists.data.map((item) => (
                 <div className="trendingSongsInnerDiv">
                     <div
+                    className="imgContainer"
                     style={{
                         backgroundImage: `url('${item.img}')`,
                         backgroundRepeat: 'no-repeat',
@@ -41,7 +42,8 @@ const TopPlaylists = () => {
                         backgroundPosition: 'center top',
                         width: '200px',
                         height: '200px',
-                        borderRadius: '20px'
+                        borderRadius: '20px',
+                        marginBottom:'10px',
                     }}
                     ></div>
                     <span className="nameSpan">{item.name}</span><br/>

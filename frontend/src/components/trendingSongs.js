@@ -102,6 +102,7 @@ const TrendingSongs = ({song,setSong}) => {
                 allSongs.data.map((item) => (
                 <div className="trendingSongsInnerDiv">
                     <div
+                    className="imgContainer"
                     style={{
                         backgroundImage: `url('${item.img}')`,
                         backgroundRepeat: 'no-repeat',

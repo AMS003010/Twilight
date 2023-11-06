@@ -18,7 +18,7 @@ router.post('/',createPlayList); //auth
 
 router.put('/edit/:id',[validateObjectId,auth],editPlayList);
 
-router.put('/add-song',auth,addSongToPlayList);
+router.put('/add-song',addSongToPlayList);   //auth
 
 router.put('/remove-song',auth,removeSong);
 
