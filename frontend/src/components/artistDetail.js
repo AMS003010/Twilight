@@ -2,11 +2,18 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import Logo from './logo';
-import artistBg from '../img/artistBg.jpg';
+
+import artist1 from '../img/Lil Nas X.jpg'
+import artist2 from '../img/Kanye West.png'
+import artist3 from '../img/Michael Jackson.jpg'
+import artist4 from '../img/Taylor Swift.jpg'
+import artist5 from '../img/Maroon 5.jpg'
 
 const ArtistDetail = (props) => {
     const { name } = useParams();
     const [songs, setSongs] = useState(null);
+
+    const artistArray = [artist1,artist2,artist3,artist4,artist5];
 
     const mystyle = {
         height: '100vh',
@@ -22,13 +29,13 @@ const ArtistDetail = (props) => {
     }
 
     const bgStyle = {
-        backgroundImage: `url('${artistBg}')`,
+        backgroundImage: `url('${artistArray[name[0]]}')`,
         border: '5px solid yellow',
         borderRadius: '55px',
         width: '40%',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        backgroundPosition: 'center bottom',
+        backgroundPosition: 'center center',
         marginLeft:'7%',
         mixBlendMode:'screen'
     }
@@ -41,7 +48,7 @@ const ArtistDetail = (props) => {
                     headers: { 'Content-Type': 'application/json' },
                 });
                 const data = await response.json(); // Note the 'await' here
-                const data1 = data.data.filter((ele) => ele.artist === name);
+                const data1 = data.data.filter((ele) => ele.artist === name.slice(1));
                 setSongs(data1);
                 console.log(data1); // Log the data, not 'songs'
             } catch (error) {
@@ -54,7 +61,7 @@ const ArtistDetail = (props) => {
     return (
         <div style={mystyle}>
             <Logo />
-            <h1 style={divStyle}>{name}</h1>
+            <h1 style={divStyle}>{name.slice(1)}</h1>
             <div style={{display:'flex'}}>
                 <div className='searchResultsWrapper' style={{marginLeft:'50px',height:'50vh'}}>
                     <div className='searchResultsContainer'>

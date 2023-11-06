@@ -16,7 +16,7 @@ const ArtistCompDiv = (props) => {
     }
     return(
         <div className='exploreArtistCard' style={divStyle}>
-            <Link to={`/artist/${props.name}`} style={{textDecoration:'none'}}>
+            <Link to={`/artist/${props.no}${props.name}`} style={{textDecoration:'none'}}>
                 <div className='exploreArtistsDiv1'>
                     <span>{props.name}</span>
                     <img src={blueTick} alt='img'/>

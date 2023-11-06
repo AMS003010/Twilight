@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { UseUserContext } from './hooks/useUserContext';
 
-import Home from './pages/home';
+//import Home from './pages/home';
 import AboutUs from './pages/about us';
 import Intro from './pages/intro';
 import Login from './pages/login';
@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
       <div className='pages'>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Explore />} />
 
           <Route path='/aboutus' element={<AboutUs />} />
 

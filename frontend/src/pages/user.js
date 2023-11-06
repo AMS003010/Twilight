@@ -18,7 +18,7 @@ const UserPage = () => {
         height:'86%',
         margin:'30px',
         borderRadius:'20px',
-        mixBlendMode:'exclusion',
+        mixBlendMode:'color-dodge',
         display:'flex'
     }
 
@@ -114,7 +114,7 @@ const UserPage = () => {
                                 </div>
                             ))
                         ) : (
-                            <div style={{textAlign:'center',objectPosition:'center',fontFamily:'Poppins',fontSize:'40px',color:'white',fontWeight:'900',justifyContent:'center',alignItems:'center',display:'flex',flexDirection:'column',marginTop:'25%'}}>
+                            <div style={{textAlign:'center',objectPosition:'center',fontFamily:'Poppins',fontSize:'40px',color:'white',fontWeight:'900',justifyContent:'center',alignItems:'center',display:'flex',flexDirection:'column',marginTop:'22%'}}>
                                 <img src={moonMan} alt='k' width='120px' height='120px'/>
                                 <div>Why so shy.<br/>Go ❤️ some songs</div>
                             </div>
@@ -140,5 +140,3 @@ const UserPage = () => {
 }
 
 export default UserPage;
-
-//This is a MERN project.In this react component, I want fetchLikes function to execute first and fetchData function should execute. Both are async functions.
