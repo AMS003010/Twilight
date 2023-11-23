@@ -1,2 +1,2 @@
 # Twilight
-A Fast Responsive Music Streaming Platform
+Welcome to Twilight, the pinnacle of music streaming. Built with the MERN stack—MongoDB, Express.js, React.js, and Node.js—it delivers a seamless, minimalist design for instant, responsive access across devices. Intelligent algorithms curate personalized playlists, making it more than a platform—it's a dynamic gateway to a global auditory adventure. Experience the future of music with Twilight, where technology and melody unite effortlessly.

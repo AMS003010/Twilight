@@ -28,9 +28,6 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
 
   return (
     <div className="carousel-container">
@@ -50,7 +47,6 @@ const Carousel = () => {
           <div
             key={index}
             className={`indicator ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
           ></div>
         ))}
       </div>
