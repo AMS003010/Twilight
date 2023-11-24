@@ -54,7 +54,7 @@ export const storage = getStorage(app);
 
 10. Then go to [localhost:3000](http://localhost:3000/).
 
-11. Use the [SongUploader.js]("") and the [PlaylistUploader.js]("") components to upload your songs and playlists on Firebase storage.
+11. Use the [SongUploader.js]("https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/SongUploader.js") and the [PlaylistUploader.js]("https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/PlaylistUploader.js") components to upload your songs and playlists on Firebase storage.
 
 
 
