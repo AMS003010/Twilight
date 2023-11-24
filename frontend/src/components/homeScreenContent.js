@@ -19,9 +19,9 @@ class HomeContent extends React.Component {
             <div className='homeContentContainer' style={myStyle}>
                 <NavBar />
                 <div className='content'>
+                    Listen.<br /><br />
                     Explore.<br /><br />
-                    Enjoy.<br /><br />
-                    Music.
+                    Enjoy.
                 </div>
                 <Link to='/intro'>
                     <button className="button-17">

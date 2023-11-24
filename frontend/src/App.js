@@ -6,7 +6,6 @@ import AboutUs from './pages/about us';
 import Intro from './pages/intro';
 import Login from './pages/login';
 import SignUp from './pages/sign up';
-//import Search from './pages/search';
 import Explore from './pages/explore';
 import NoMatch from './pages/no match';
 import ArtistDetail from './components/artistDetail';

@@ -28,8 +28,8 @@ router.get('/random',getRandomPlaylists);   //auth
 
 router.get('/:id',[validateObjectId,auth],getPlayList);
 
-router.get('/',auth,getAllPlayLists);
+router.get('/',getAllPlayLists); //auth
 
-router.delete('/:id',[validateObjectId,auth],deletePlaylist);
+router.delete('/:id',deletePlaylist);  //[validateObjectId,auth]
 
 module.exports = router;

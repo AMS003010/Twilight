@@ -109,19 +109,11 @@ const getAllPlayLists = async (req,res) => {
 };
 
 const deletePlaylist = async (req,res) => {
-    const user = await User.findById(req.user._id);
-    const playlist = await Playlist.findById(req.params.id);
-    if(!playlist){
-        return res.status(404).send({message: "Playlist not found"});
-    }
-    if(!user._id.equals(playlist.user)){
-        return res.status(403).send({message: "User is not authorized to delete"});
-    }
-    const index = user.playlists.indexOf(req.params.id);
-    user.playlists.splice(index,1);
-    await user.save();
-    await Playlist.findByIdAndDelete(req.params.id);
-    res.status(200).send({message: "Removed from library"});
+    await Playlist.findByIdAndDelete(
+        req.params.id
+    );
+    const playlists = await Playlist.find();
+    res.status(200).send({data: playlists});
 };
 
 module.exports = {

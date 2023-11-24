@@ -1,12 +1,31 @@
 import React, { useState, useEffect } from "react";
 
+import deleteImage from '../img/delete.png';
+
 const TopPlaylists = () => {
     const [randomPlaylists,setRandomPlaylists] =  useState(null);
+    const [isAdmin,setIsAdmin] = useState(false);
+
+    const handleDelete = async (id) => {
+        const response = await fetch(`/api/playlist/${id}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (!response.ok) {
+            console.log("Unable to delete playlist");
+            return;
+        }
+        const data = await response.json();
+        setRandomPlaylists(data);
+    };
 
     useEffect(() => {
+
+        const user = JSON.parse(localStorage.getItem('user'))
         const fetchData = async () => {
         try {
-            const response = await fetch('/api/playlist/random', {
+            const response = await fetch('/api/playlist', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             });
@@ -25,6 +44,9 @@ const TopPlaylists = () => {
         };
 
         fetchData();
+        if(user.email === "abhi@gmail.com"){
+            setIsAdmin(true);
+        }
     }, []);
 
     return(
@@ -46,7 +68,10 @@ const TopPlaylists = () => {
                         marginBottom:'10px',
                     }}
                     ></div>
-                    <span className="nameSpan">{item.name}</span><br/>
+                    <div style={{justifyContent:'space-between',alignItems:'center',display:'flex'}}>
+                        <div className="nameSpan">{item.name}</div>
+                        {isAdmin ? <img src={deleteImage} className="deleteImg" alt="k" width='20px' onClick={() => {handleDelete(item._id)}}/> : <div></div>}
+                    </div>                    
                 </div>
                 ))
             ) : (

@@ -21,7 +21,7 @@ router.get("/",admin,getAllUsers);
 
 router.get('/:id',[validateObjectId,auth],getUser);
 
-router.put('/:id',[validateObjectId,auth],updateUser);
+router.put('/:id',updateUser);    //[validateObjectId,auth]
 
 router.delete('/:id',[validateObjectId,auth],deleteUser);
 
