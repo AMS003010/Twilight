@@ -19,7 +19,7 @@ Welcome to Twilight - a digital oasis where music and magic intertwine. Powered 
 ### To run this project locally
 1. Install [nodejs](https://nodejs.org/en)
 2. Create a [mongodb atlas](https://www.mongodb.com/atlas/database) account and get your MONGODB URI
-3. Create a [Firebase]("https://firebase.google.com/") account and configer for storage.
+3. Create a [Firebase](https://firebase.google.com/) account and configer for storage.
 4. Clone this repository and install the required packages using npm.
 
 ```
@@ -35,7 +35,7 @@ PORT='<port>'
 MONGO_URI='<mongobd uri>'
 SECRET='<key>'
 ```
-6. Add your firebase config details in [firebase.js]("")
+6. Add your firebase config details in [firebase.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/firebase.js)
 
 ```
 import { initializeApp } from "firebase/app";
