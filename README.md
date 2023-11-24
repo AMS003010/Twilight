@@ -35,7 +35,7 @@ PORT='<port>'
 MONGO_URI='<mongobd uri>'
 SECRET='<key>'
 ```
-6. Add your firebase config details in [firebase.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/firebase.js)
+6. Add your firebase config details in [firebase.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/firebase.js)
 
 ```
 import { initializeApp } from "firebase/app";
