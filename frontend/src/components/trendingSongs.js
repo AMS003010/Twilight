@@ -126,6 +126,7 @@ const TrendingSongs = ({song,setSong}) => {
                                 width='20px' 
                                 height='20px'
                                 onClick={() => likeSongOrUnlike(item._id)}
+                                className="likeImage"
                             />
                         </div>
                     </div>

@@ -1243,6 +1243,7 @@ form button {
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  height: 20rem;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -1256,16 +1257,19 @@ form button {
 .trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv {
   margin-right: 10px;
   font-family: Poppins;
+  padding: 20px;
 }
 
 .trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .imgContainer {
   margin-bottom: 10px;
   box-shadow: 0px 0px 5px black;
   transition: box-shadow 0.5s ease;
+  transition: transform 0.3s ease-in-out;  
 }
 
 .trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .imgContainer:hover {
   box-shadow: 0px 7px 12px black;
+  transform: scale(1.1) translateY(-10px);
 }
 
 .trendingSongsWrapper .trendingSongsContainer .trendingSongsInnerDiv .nameSpan {
@@ -1466,5 +1470,17 @@ form button {
 }
 
 .deleteImg:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
+
+.editname:hover {
+  opacity: 0.5;
+}
+
+.editokname:hover {
+  opacity: 0.5;
+}
+
+.likeImage:hover {
+  opacity: 0.5;
+} 

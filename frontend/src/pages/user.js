@@ -187,7 +187,7 @@ const UserPage = () => {
                                 { 
                                 editMode ? <div style={{marginTop:'10px',marginBottom:'10px',display:'flex',alignItems:'center'}}>
                                                 <div>{name ? name : <p>Loading...</p>}</div>
-                                                <img src={edit} alt='k' style={editSpan} onClick={() => {handleEditName()}}/>
+                                                <img src={edit} alt='k' style={editSpan} className='editname' onClick={() => {handleEditName()}}/>
                                             </div> 
                                             : 
                                             <div style={{display:'flex',alignItems:'center'}}>
@@ -195,7 +195,7 @@ const UserPage = () => {
                                                     type='text'
                                                     onChange={(e) => {setNewName(e.target.value)}}
                                                 />
-                                                <img src={tick} alt='k' style={editSpan} onClick={() => {handleClickEdit()}}/>
+                                                <img src={tick} alt='k' style={editSpan} className='editokname' onClick={() => {handleClickEdit()}}/>
                                             </div>
                                     }
                             </div>
