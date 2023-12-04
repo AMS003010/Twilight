@@ -21,7 +21,6 @@ const TopPlaylists = () => {
     };
 
     useEffect(() => {
-
         const user = JSON.parse(localStorage.getItem('user'))
         const fetchData = async () => {
         try {
