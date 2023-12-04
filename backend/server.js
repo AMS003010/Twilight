@@ -17,13 +17,7 @@ app.use((req,res,next) => {
     console.log(req.path,req.method)
     next()
 })
-app.use(cors(
-    {
-        origin: ["https://twilight.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));     //app.use(cors());
+app.use(cors());
 
 app.use('/api/user',userRoutes);
 app.use('/api/login',authRoutes);
