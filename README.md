@@ -1,6 +1,30 @@
 # Twilight
 Welcome to Twilight - a digital oasis where music and magic intertwine. Powered by the MERN stack, this sleek platform offers a personalized auditory journey. It's not just music; it's a cosmic concert of cool, where technology and melody perform a nightly serenade just for you.
 
+# Project Images
+![Home page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/home.png)
+
+![Intro page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/intro.png)
+
+![Login page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/login.png)
+
+![Signup page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/signup.png)
+
+![Listening Space](https://github.com/AMS003010/Twilight/blob/main/Project%20images/listening_space.png)
+
+![Listening Space 2](https://github.com/AMS003010/Twilight/blob/main/Project%20images/list_space2.png)
+
+![Music Control](https://github.com/AMS003010/Twilight/blob/main/Project%20images/music_control.png)
+
+![Genre page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/genre.png)
+
+![Artists page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/artists.png)
+
+![Search page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/search.png)
+
+![User Dashboard page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/user_profile.png)
+
+
 ## Features
 * Users can curate their own playlists based on music preferences, creating a tailored sonic experience.
 * Explore an intuitive platform where music genres and artists come to life through immersive visuals.
