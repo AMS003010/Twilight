@@ -1,91 +1,130 @@
 # Twilight
-Welcome to Twilight - a digital oasis where music and magic intertwine. Powered by the MERN stack, this sleek platform offers a personalized auditory journey. It's not just music; it's a cosmic concert of cool, where technology and melody perform a nightly serenade just for you.
 
-# Project Images
-![Home page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/home.png)
+Welcome to **Twilight** - a digital oasis where music and magic intertwine. Powered by the **MERN stack**, this sleek platform offers a personalized auditory journey. It’s more than just music; it’s a **cosmic concert of cool**, where technology and melody perform a nightly serenade just for you.
 
-![Intro page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/intro.png)
+---
 
-![Login page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/login.png)
+## 📸 Project Images
 
-![Signup page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/signup.png)
+| Feature | Screenshot |
+|---------|-----------|
+| **Home Page** | ![Home page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/home.png) |
+| **Intro Page** | ![Intro page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/intro.png) |
+| **Login Page** | ![Login page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/login.png) |
+| **Signup Page** | ![Signup page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/signup.png) |
+| **Listening Space** | ![Listening Space](https://github.com/AMS003010/Twilight/blob/main/Project%20images/listening_space.png) |
+| **Music Control** | ![Music Control](https://github.com/AMS003010/Twilight/blob/main/Project%20images/music_control.png) |
+| **Genres** | ![Genre page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/genre.png) |
+| **Artists** | ![Artists page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/artists.png) |
+| **Search Page** | ![Search page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/search.png) |
+| **User Dashboard** | ![User Dashboard page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/user_profile.png) |
 
-![Listening Space](https://github.com/AMS003010/Twilight/blob/main/Project%20images/listening_space.png)
+---
 
-![Listening Space 2](https://github.com/AMS003010/Twilight/blob/main/Project%20images/list_space2.png)
+## 🚀 Features
 
-![Music Control](https://github.com/AMS003010/Twilight/blob/main/Project%20images/music_control.png)
+- 🎵 **Curate Playlists** - Create personalized playlists based on music preferences.
+- 🔍 **Powerful Search** - Find tracks, albums, or artists instantly.
+- 🎭 **Immersive UI** - Explore a visually engaging music player.
+- 📌 **User Profiles** - View favorite songs and get music recommendations.
+- 🎨 **Genre & Artist Exploration** - Discover new music genres and artists interactively.
 
-![Genre page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/genre.png)
+---
 
-![Artists page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/artists.png)
+## 🛠️ Prerequisites
 
-![Search page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/search.png)
+Before running the project, ensure you have the following installed:
 
-![User Dashboard page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/user_profile.png)
+1. **[Node.js](https://nodejs.org/en)** - JavaScript runtime for server-side execution.
+2. **[MongoDB Atlas](https://www.mongodb.com/atlas/database)** - Cloud database to store user and music data.
+3. **[Firebase](https://firebase.google.com/)** - Used for storing images and audio files.
 
+---
 
-## Features
-* Users can curate their own playlists based on music preferences, creating a tailored sonic experience.
-* Explore an intuitive platform where music genres and artists come to life through immersive visuals.
-* Quickly find desired tracks, albums, or artists through a powerful search feature.
-* Personalized user profiles display favorite songs and a snapshot of musical preferences.
-* Dive into an immersive audio journey with a visually stunning and user-friendly music player.
+## 💻 Getting Started
 
-### Prerequisites
-
-1. **Node.js** for running server-side JavaScript. 
-
-2. **MongoDB Atlas** to store data about user, songs, playlists
-
-3. A **Firebase** account with firebase config details for the storage which will be used to store the images and audio files being used.
-
-### To run this project locally
-1. Install [nodejs](https://nodejs.org/en)
-2. Create a [mongodb atlas](https://www.mongodb.com/atlas/database) account and get your MONGODB URI
-3. Create a [Firebase](https://firebase.google.com/) account and configer for storage.
-4. Clone this repository and install the required packages using npm.
-
-```
+### 1️⃣ Clone the Repository
+```sh
 git clone https://github.com/AMS003010/Twilight.git
 cd Twilight
 npm install
 ```
 
-5. Create a .env file in the backend directory and add your MONGODB_URI and also a SECRET to hash your passwords.
+### 2️⃣ Set Up Environment Variables
+Create a **.env** file in the `backend` directory and add the following:
+```sh
+PORT='<your_port>'
+MONGO_URI='<your_mongodb_uri>'
+SECRET='<your_secret_key>'
+```
 
-```
-PORT='<port>'
-MONGO_URI='<mongobd uri>'
-SECRET='<key>'
-```
-6. Add your firebase config details in [firebase.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/firebase.js)
-
-```
+### 3️⃣ Configure Firebase
+Add your Firebase configuration details in `frontend/src/firebase.js`:
+```js
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
+
 const firebaseConfig = {
-    <config details>
+    <your_firebase_config_details>
 };
 
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 ```
 
-7. Remaining in the Twilight repository, run ```cd backend```  and ```npm start``` in the terminal with the project.  
+### 4️⃣ Run the Backend Server
+```sh
+cd backend
+npm start
+```
 
-9. Run ```cd frontend``` in another terminal and ```npm start``` in the terminal with the project.
+### 5️⃣ Run the Frontend Server
+Open another terminal:
+```sh
+cd frontend
+npm start
+```
 
-10. Then go to [localhost:3000](http://localhost:3000/).
+### 6️⃣ Access the App
+Go to [localhost:3000](http://localhost:3000/) in your browser.
 
-11. Use the [SongUploader.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/SongUploader.js) and the [PlaylistUploader.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/PlaylistUploader.js) components to upload your songs and playlists on Firebase storage.
+### 7️⃣ Upload Music & Playlists
+Use the following components to upload songs and playlists to Firebase Storage:
+- **[SongUploader.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/SongUploader.js)**
+- **[PlaylistUploader.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/PlaylistUploader.js)**
 
+---
 
+## 🏗️ Built With
 
-## Built With
+| Technology | Description |
+|------------|-------------|
+| **[Node.js](https://nodejs.org/)** | JavaScript runtime for backend development |
+| **[Express.js](https://expressjs.com/)** | Web framework for Node.js |
+| **[MongoDB Atlas](https://www.mongodb.com/atlas/database)** | Cloud-based NoSQL database |
+| **[Mongoose](https://mongoosejs.com/)** | MongoDB object modeling for Node.js |
+| **[React.js](https://react.dev/)** | Frontend JavaScript library |
 
-- [Node.js](https://nodejs.org) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-- [express](https://expressjs.com//) - Fast, unopinionated, minimalist web framework for Node.js
-- [MongoDB Atlas](https://www.mongodb.com/atlas/database) - The cloud database for modern applications
-- [Mongoose](https://mongoosejs.com/) - Elegant MongoDB object modeling for Node.js
-- [React](https://react.dev/) - The library for web and native user interfaces
+---
+
+## 🤝 Contributing
+We welcome contributions to **Twilight**! To contribute:
+1. Fork the repository.
+2. Create a new branch (`feature-branch`).
+3. Commit your changes.
+4. Push to your branch and open a pull request.
+
+---
+
+## 📝 License
+This project is licensed under the **MIT License**.
+
+---
+
+## 📞 Contact
+For any queries, feel free to reach out:
+- **GitHub Issues** - [Create an issue](https://github.com/AMS003010/Twilight/issues)
+- **Email** - [your-email@example.com](mailto:your-email@example.com)
+
+Happy coding! 🚀🎶
+
