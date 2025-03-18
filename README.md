@@ -4,23 +4,6 @@ Welcome to **Twilight** - a digital oasis where music and magic intertwine. Powe
 
 ---
 
-## 📸 Project Images
-
-| Feature | Screenshot |
-|---------|-----------|
-| **Home Page** | ![Home page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/home.png) |
-| **Intro Page** | ![Intro page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/intro.png) |
-| **Login Page** | ![Login page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/login.png) |
-| **Signup Page** | ![Signup page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/signup.png) |
-| **Listening Space** | ![Listening Space](https://github.com/AMS003010/Twilight/blob/main/Project%20images/listening_space.png) |
-| **Music Control** | ![Music Control](https://github.com/AMS003010/Twilight/blob/main/Project%20images/music_control.png) |
-| **Genres** | ![Genre page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/genre.png) |
-| **Artists** | ![Artists page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/artists.png) |
-| **Search Page** | ![Search page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/search.png) |
-| **User Dashboard** | ![User Dashboard page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/user_profile.png) |
-
----
-
 ## 🚀 Features
 
 - 🎵 **Curate Playlists** - Create personalized playlists based on music preferences.
@@ -92,6 +75,23 @@ Go to [localhost:3000](http://localhost:3000/) in your browser.
 Use the following components to upload songs and playlists to Firebase Storage:
 - **[SongUploader.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/SongUploader.js)**
 - **[PlaylistUploader.js](https://github.com/AMS003010/Twilight/blob/main/frontend/src/components/PlaylistUploader.js)**
+
+---
+
+## 📸 Project Images
+
+| Feature | Screenshot |
+|---------|-----------|
+| **Home Page** | ![Home page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/home.png) |
+| **Intro Page** | ![Intro page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/intro.png) |
+| **Login Page** | ![Login page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/login.png) |
+| **Signup Page** | ![Signup page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/signup.png) |
+| **Listening Space** | ![Listening Space](https://github.com/AMS003010/Twilight/blob/main/Project%20images/listening_space.png) |
+| **Music Control** | ![Music Control](https://github.com/AMS003010/Twilight/blob/main/Project%20images/music_control.png) |
+| **Genres** | ![Genre page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/genre.png) |
+| **Artists** | ![Artists page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/artists.png) |
+| **Search Page** | ![Search page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/search.png) |
+| **User Dashboard** | ![User Dashboard page](https://github.com/AMS003010/Twilight/blob/main/Project%20images/user_profile.png) |
 
 ---
 
