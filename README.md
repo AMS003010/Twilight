@@ -14,6 +14,18 @@ Welcome to **Twilight** - a digital oasis where music and magic intertwine. Powe
 
 ---
 
+## 🏗️ Built With
+
+| Technology | Description |
+|------------|-------------|
+| **[Node.js](https://nodejs.org/)** | JavaScript runtime for backend development |
+| **[Express.js](https://expressjs.com/)** | Web framework for Node.js |
+| **[MongoDB Atlas](https://www.mongodb.com/atlas/database)** | Cloud-based NoSQL database |
+| **[Mongoose](https://mongoosejs.com/)** | MongoDB object modeling for Node.js |
+| **[React.js](https://react.dev/)** | Frontend JavaScript library |
+
+---
+
 ## 🛠️ Prerequisites
 
 Before running the project, ensure you have the following installed:
@@ -95,15 +107,8 @@ Use the following components to upload songs and playlists to Firebase Storage:
 
 ---
 
-## 🏗️ Built With
-
-| Technology | Description |
-|------------|-------------|
-| **[Node.js](https://nodejs.org/)** | JavaScript runtime for backend development |
-| **[Express.js](https://expressjs.com/)** | Web framework for Node.js |
-| **[MongoDB Atlas](https://www.mongodb.com/atlas/database)** | Cloud-based NoSQL database |
-| **[Mongoose](https://mongoosejs.com/)** | MongoDB object modeling for Node.js |
-| **[React.js](https://react.dev/)** | Frontend JavaScript library |
+## 👨‍💻 Maintainers
+This project is maintained by Abhijith M S ([AMS003010](https://github.com/ams003010/)).
 
 ---
 
@@ -121,10 +126,8 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 📞 Contact
-For any queries, feel free to reach out:
-- **GitHub Issues** - [Create an issue](https://github.com/AMS003010/Twilight/issues)
-- **Email** - [your-email@example.com](mailto:your-email@example.com)
+📩 Contact
+For any queries or issues, feel free to reach out via GitHub Issues.
 
-Happy coding! 🚀🎶
+Happy Coding! 🚀
 
