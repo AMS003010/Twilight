@@ -40,6 +40,7 @@ Before running the project, ensure you have the following installed:
 
 ### 1️⃣ Clone the Repository
 ```sh
+
 git clone https://github.com/AMS003010/Twilight.git
 cd Twilight
 npm install
@@ -48,6 +49,7 @@ npm install
 ### 2️⃣ Set Up Environment Variables
 Create a **.env** file in the `backend` directory and add the following:
 ```sh
+
 PORT='<your_port>'
 MONGO_URI='<your_mongodb_uri>'
 SECRET='<your_secret_key>'
