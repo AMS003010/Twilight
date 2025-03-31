@@ -110,7 +110,7 @@ Use the following components to upload songs and playlists to Firebase Storage:
 ---
 
 ## 👨‍💻 Maintainers
-This project is maintained by Abhijith M S ([AMS003010](https://github.com/ams003010/)).
+This project is maintained by [@AMS003010](https://github.com/AMS003010).
 
 ---
 
